@@ -32,7 +32,6 @@
 <body>
 
     <div class="button menu-button">
-
             <svg version="1.1" class="morph" id="quvate-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="" xml:space="preserve">
               <style type="text/css">
                 .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#40B8B3;}
@@ -50,23 +49,35 @@
                 l9.7,9.7c-0.7-5.2-3.1-9.9-6.7-13.5c-4.2-4.2-10.1-6.9-16.6-6.9c-6.5,0-12.3,2.6-16.6,6.9c-3.6,3.6-6,8.4-6.7,13.7l4.7,4.7
                 c-0.1-0.6-0.1-1.2-0.1-1.9c0-5.1,2.1-9.8,5.5-13.2c3.4-3.4,8-5.5,13.2-5.5c5.1,0,9.8,2.1,13.2,5.5C57.5,37.3,57.6,37.4,57.8,37.6z"></path>
               </svg>
-  
     </div>
 
+
     <div id="scroll-container">
-    <section id="my-background" class="section-test">
+
+    <section id="anim-bg" class="width">
+        <div class="section-wrapper">
+          Hi
+        </div>
     </section>
 
     <section id="my-background2" class="section-test">
-        <h1>Scroll up</h1>
+        <div class="section-wrapper">
+            <h1>Scroll up</h1>
+        </div>
       </section>
-    </div>
+
+    <section id="my-background3" class="section-test">
+        <div class="section-wrapper">
+            <h1>Test</h1>
+        </div>
+      </section>
+  
 
       <script src="p5.min.js"></script>
       <script src="vanta.trunk.min.js"></script>
       <script>
         VANTA.TRUNK({
-        el: "#my-background",
+        el: "#anim-bg",
         color: 0x40B8B3
       })
       </script>
