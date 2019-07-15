@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Arapey");
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Arapey';
@@ -19,7 +23,6 @@ section {
 #my-background {
   top: 0;
   width: 100%;
-  position: absolute;
 }
 section img {
   position: absolute;
@@ -44,5 +47,33 @@ section:nth-child(odd) {
   left: 30px;
   z-index: 9;
   width: 80px;
+}
+
+#scroll-container{
+  overflow: visible;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  white-space: nowrap;
+  height: 100vh;
+  height: calc(var(--vh, 1vh)*100);
+}
+.section-test{
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  white-space: normal;
+  margin: 0;
+  position: relative;
+  min-height: 600px;
+  height: 100vh;
+  height: calc(var(--vh, 1vh)*100);
+}
+
+@media (min-width: 992px){
+  #my-background {
+    min-width: calc(100vw - 72px)!important;
+  }
 }
 

@@ -7,7 +7,7 @@
     <script src="./vendor/jquery.js"></script>
     <script src="./vendor/three.r92.min.js"></script>
     <script src="./vendor/orbit-controls.js"></script>
-    <script src="./vendor/GlslCanvas.js"></script>
+    <!-- <script src="./vendor/GlslCanvas.js"></script> -->
     <script src="./vendor/ThreeCSG.js"></script>
     <script src="./vendor/dat.gui.min.js"></script>
     <script src="./vendor/rison.js"></script>
@@ -25,13 +25,13 @@
     <script src="./dist/vanta.dots.min.js"></script>
     <script src="./dist/vanta.rings.min.js"></script>
     <script src="./dist/vanta.ripple.min.js"></script> 
-   <script src="./dist/vanta.struct.min.js"></script>
+   <!-- <script src="./dist/vanta.struct.min.js"></script> -->
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="button menu-button menu-button_open afterLoad shown">
+    <div class="button menu-button">
 
             <svg version="1.1" class="morph" id="quvate-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="" xml:space="preserve">
               <style type="text/css">
@@ -53,13 +53,14 @@
   
     </div>
 
-    <h1>Test</h1>
-    <section id="my-background">
+    <div id="scroll-container">
+    <section id="my-background" class="section-test">
     </section>
 
-    <!-- <section id="my-background2">
+    <section id="my-background2" class="section-test">
         <h1>Scroll up</h1>
-      </section> -->
+      </section>
+    </div>
 
       <script src="p5.min.js"></script>
       <script src="vanta.trunk.min.js"></script>
