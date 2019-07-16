@@ -12,22 +12,39 @@
   transform: $delay;
 }
 html { font-size: 62.5%; }  /* =10px */
-body { font-size: 1.4rem; } /* =14px */
+body { font-size: 1.4rem; background-color: $color-900; } /* =14px */
 h1   { font-size: 2.4rem; } /* =24px */
+/*------------------------------------*\
+    Pre-loader
+\*------------------------------------*/
+#pre-loader {
+  width: 100vw;
+  height: 100vh;
+  padding: calculateRem(50px);
+  position: absolute;
+  z-index: 1000;
+  background-color: $color-900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /*------------------------------------*\
     Logo
 \*------------------------------------*/
-#header {
+#logo-container {
   z-index: 100;
+  width: calculateRem(85px);
+  height: calculateRem(85px);
+  position: fixed;
+  top: calculateRem(50px);
+  left: calculateRem(50px);
 }
 
 #logo {
   z-index: 100;
   fill: $color-100;
-  position: fixed;
-  top: calculateRem(50px);
-  left: calculateRem(50px);
-  width: calculateRem(100px);
+  // width: calculateRem(100px);
+  width: 100%;
 }
 
 /*------------------------------------*\

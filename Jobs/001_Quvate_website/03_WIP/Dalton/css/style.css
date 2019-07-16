@@ -50,6 +50,7 @@ html {
 /* =10px */
 body {
   font-size: 1.4rem;
+  background-color: #1a237e;
 }
 
 /* =14px */
@@ -59,19 +60,43 @@ h1 {
 
 /* =24px */
 /*------------------------------------*\
+    Pre-loader
+\*------------------------------------*/
+#pre-loader {
+  width: 100vw;
+  height: 100vh;
+  padding: 3.125rem;
+  position: absolute;
+  z-index: 1000;
+  background-color: #1a237e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*------------------------------------*\
     Logo
 \*------------------------------------*/
-#header {
+#logo-container {
   z-index: 100;
+  width: 5.3125rem;
+  height: 5.3125rem;
+  position: fixed;
+  top: 3.125rem;
+  left: 3.125rem;
 }
 
 #logo {
   z-index: 100;
   fill: #c5cae9;
-  position: fixed;
-  top: 3.125rem;
-  left: 3.125rem;
-  width: 6.25rem;
+  width: 100%;
 }
 
 /*------------------------------------*\
