@@ -7,10 +7,12 @@ body {
   margin: 0;
   font-family: 'Arapey';
 }
+
 body h1 {
   font-size: 2em;
   text-align: center;
   margin-top: 30%;
+  color:white;
 }
 
 section {
@@ -99,5 +101,27 @@ section:nth-child(odd) {
   #my-background2{
     /* min-width: 100vw!important; */
   }
+}
+
+.sticky {
+  /* background: white !important; */
+}
+
+.percentage {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 5px solid lightgray;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
