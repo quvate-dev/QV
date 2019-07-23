@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+p,
+a,
+h1,
+h2,
+h3 {
+    @include general_text_style;
+}

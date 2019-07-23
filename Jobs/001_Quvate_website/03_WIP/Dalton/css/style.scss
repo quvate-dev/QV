@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    Imports
+\*------------------------------------*/
+@import 'partials/variables';
+@import 'partials/typography';
+
+/*------------------------------------*\
+    General
+\*------------------------------------*/
+* {
+  box-sizing: border-box;
+  transform: $delay;
+}
+html { font-size: 62.5%; }  /* =10px */
+body { font-size: 1.4rem; background-color: $color-900; } /* =14px */
+h1   { font-size: 2.4rem; } /* =24px */
+/*------------------------------------*\
+    Pre-loader
+\*------------------------------------*/
+#pre-loader {
+  width: 100vw;
+  height: 100vh;
+  padding: calculateRem(50px);
+  position: absolute;
+  z-index: 1000;
+  background-color: $color-900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*------------------------------------*\
+    Logo
+\*------------------------------------*/
+#logo-container {
+  z-index: 100;
+  width: calculateRem(85px);
+  height: calculateRem(85px);
+  position: fixed;
+  top: calculateRem(50px);
+  left: calculateRem(50px);
+}
+
+#logo {
+  z-index: 100;
+  fill: $color-100;
+  // width: calculateRem(100px);
+  width: 100%;
+}
+
+/*------------------------------------*\
+    Pages
+\*------------------------------------*/
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.page {
+  min-height: calc(100vh - #{calculateRem(0px)});
+  max-height: 100vh;
+  width: calc(100vw - #{calculateRem(0px)});
+  padding: calculateRem(170px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  position: relative;
+  background-color: $color-900;
+  &:nth-child(odd) {
+    background-color: $color-700;
+  }
+}
+
+/*------------------------------------*\
+    Text-block
+\*------------------------------------*/
+.text-block {
+  position: absolute;
+  text-align: left;
+  max-width:50%;
+  .knockout-text {
+    text-align: left;
+    font-size: calculateRem(170px);
+    line-height: .75;
+    letter-spacing: 1px;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 1px white; 
+    font-family: 'Playfair Display', serif;
+  }
+  .subline-text {
+    text-align: left;
+    font-size: calculateRem(70px);
+    font-weight: 600;
+    text-transform: uppercase;
+    // font-family: 'Roboto', sans-serif;
+    margin:#{calculateRem(0px)} 0 0 0;
+  }
+  .aside-text {
+    position: absolute;
+    left:calculateRem(-10px);
+    bottom:calculateRem(5px);
+    text-align: left;
+    text-transform: uppercase;
+    font-size: calculateRem(36px);
+    margin: 0;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+  }
+}
+
+/*------------------------------------*\
+    vertical-overflow-slider
+\*------------------------------------*/
+.vertical-overflow-slider {
+  max-width: 30%;
+  display: flex;
+  right: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  max-height: 100vh;
+  overflow: hidden;
+  justify-content: space-between;
+  .vertical-overflow-slider-column {
+    display: flex;
+    flex-direction: column;
+    
+    &:nth-child(even) {
+      margin-top: calculateRem(100px);
+    }
+  }
+  .iphones {
+    max-width:80%;
+    img {
+      max-width: 100%;
+      width:100%;
+      margin-bottom: calculateRem(70px);
+    }
+  }
+}

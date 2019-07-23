@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+$color-100: rgb(197, 202, 233);
+$color-300: rgb(121, 134, 203);
+$color-500: rgb(63, 81, 181);
+$color-700: rgb(48, 63, 159);
+$color-900: rgb(26, 35, 126);
+
+$light: lighten($color-100, 10%);
+$dark: darken($color-900, 10%);
+
+$delay: 0.2s;
+$fontSize : 3.4rem;
+
+/*------------------------------------*\
+    Functions
+\*------------------------------------*/
+@function multiply($value1, $value2) {
+  @return $value1 * $value2;
+}
+
+// Define default font size
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin general_text_style {
+  color: $light;
+  line-height: 1.2;
+  // font-family: 'Roboto', serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  letter-spacing: .05em;
+  transition: $delay;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 1px transparent;
+  text-rendering: optimizeLegibility;
+}
