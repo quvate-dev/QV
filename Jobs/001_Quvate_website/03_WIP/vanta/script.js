@@ -20,7 +20,8 @@ const scene = new ScrollMagic.Scene({
   triggerElement: "#my-background3",
             triggerHook: "onLeave",
             duration: "100%",
-            reverse: true
+            reverse: true,
+            tweenChanges: true
 })
   .setPin("#my-background3")
   .setTween(tl)
@@ -36,10 +37,61 @@ const scene2 = new ScrollMagic.Scene({
 
 
 function updatePercentage() {
-  percent.innerHTML = (tl.progress() *100 ).toFixed();
-    tl.progress();
-  console.log(tl.progress());
+  var progress = (tl.progress() *100 ).toFixed();
+  percent.innerHTML = progress;
+
+  tl.progress();
+  // console.log(tl.progress());
 }
+
+function deviceAnimation(){
+  var colors = ["#f38630", "#6fb936", "#ccc", "#6fb936"];
+
+  var prevButton = document.querySelector("#prevButton");
+  var nextButton = document.querySelector("#nextButton");
+  var boxes = document.querySelectorAll(".box");
+
+  var boxWidth = 150;
+  var wrapWidth = (boxes.length - 1) * boxWidth;
+
+  var animatePrev = animateCarousel.bind(prevButton, -boxWidth);
+  var animateNext = animateCarousel.bind(nextButton,  boxWidth);
+
+  TweenMax.set(boxes, {
+    x: function(i) {
+      return i * boxWidth;
+    }
+  });
+
+  // prevButton.addEventListener("click", animatePrev);
+  // nextButton.addEventListener("click", animateNext);
+
+  function animateCarousel(delta) {
+    
+    TweenMax.to(boxes, 0.8, {
+      x: function(i, target) {
+        var x = Math.round(target._gsTransform.x / boxWidth) * boxWidth;
+        return x + delta;
+      },
+      modifiers: {
+        x: function(x) {
+          return wrap(x, -boxWidth, wrapWidth)
+        }
+      }
+    });
+  }
+
+  function wrap(value, min, max) {
+    var v = value - min;
+    var r = max - min;
+
+    return ((r + v % r) % r) + min;
+  }
+
+  console.log(wrap(800, 0, 700));
+}
+
+deviceAnimation()
 
 // var generateDevices = function(numberOf) {
 
