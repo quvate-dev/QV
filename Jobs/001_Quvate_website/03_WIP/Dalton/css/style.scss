@@ -27,6 +27,26 @@ h1   { font-size: 2.4rem; } /* =24px */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  #loader-text {
+    position: absolute;
+    left: 0;
+    right:0;
+    h2 {
+      display: none;
+      text-transform: uppercase;
+      font-size: calc(100px + (650 - 100) * ((100vw - 150px) / (1700 - 800)));
+    }    
+  }
+}
+#pre-loader-logo {
+  z-index: 100;
+  fill: rgb(255,255,255);
+  // stroke:white;
+  width: 80%;
+  height: 100%;
+  margin:0 auto;
+  
 }
 /*------------------------------------*\
     Logo
@@ -43,7 +63,6 @@ h1   { font-size: 2.4rem; } /* =24px */
 #logo {
   z-index: 100;
   fill: $color-100;
-  // width: calculateRem(100px);
   width: 100%;
 }
 
@@ -79,36 +98,47 @@ main {
 .text-block {
   position: absolute;
   text-align: left;
-  max-width:50%;
-  .knockout-text {
-    text-align: left;
-    font-size: calculateRem(170px);
-    line-height: .75;
-    letter-spacing: 1px;
-    color: transparent;
-    font-weight: 900;
-    -webkit-text-stroke: 1px white; 
-    font-family: 'Playfair Display', serif;
+  max-width:100%;
+  @include breakpoint(x-small) {
+    max-width:50%;
   }
-  .subline-text {
-    text-align: left;
-    font-size: calculateRem(70px);
-    font-weight: 600;
-    text-transform: uppercase;
-    // font-family: 'Roboto', sans-serif;
-    margin:#{calculateRem(0px)} 0 0 0;
+  .text-container {
+    overflow: hidden;
+    height: auto;
+    .knockout-text {
+      text-align: left;
+      font-size: calculateRem(170px);
+      line-height: .75;
+      letter-spacing: 1px;
+      color: transparent;
+      font-weight: 900;
+      -webkit-text-stroke: 1px white; 
+      font-family: 'Playfair Display', serif;
+    }
+    .subline-text {
+      text-align: left;
+      font-size: calculateRem(70px);
+      font-weight: 600;
+      text-transform: uppercase;
+      // margin:#{calculateRem(-20px)} 0 0 0;
+      margin:0;
+    }
+    .aside-text {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: calculateRem(36px);
+      margin: 0;
+    }
+    &--aside {
+      position: absolute;
+      left:calculateRem(-10px);
+      bottom:calculateRem(5px);
+      transform: rotate(-90deg);
+      transform-origin: bottom left;
+      // height: 50px;
+    }
   }
-  .aside-text {
-    position: absolute;
-    left:calculateRem(-10px);
-    bottom:calculateRem(5px);
-    text-align: left;
-    text-transform: uppercase;
-    font-size: calculateRem(36px);
-    margin: 0;
-    transform: rotate(-90deg);
-    transform-origin: bottom left;
-  }
+  
 }
 
 /*------------------------------------*\

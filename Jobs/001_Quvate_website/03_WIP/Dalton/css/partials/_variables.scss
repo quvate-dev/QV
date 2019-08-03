@@ -16,6 +16,26 @@ $fontSize : 3.4rem;
 /*------------------------------------*\
     Functions
 \*------------------------------------*/
+@mixin breakpoint($point) {
+  @if $point == xx-large {
+    @media (min-width: 105rem) { @content; }
+  }
+  @if $point == x-large {
+    @media (min-width: 85rem) { @content; }
+  }
+  @if $point == large {
+    @media (min-width: 64.375rem) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 50rem) { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: 37.5rem)  { @content; }
+  }
+  @else if $point == x-small {
+    @media (min-width: 25rem)  { @content; }
+  }
+}
 @function multiply($value1, $value2) {
   @return $value1 * $value2;
 }
