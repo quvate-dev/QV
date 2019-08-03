@@ -79,6 +79,27 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
+}
+
+#pre-loader #loader-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#pre-loader #loader-text h2 {
+  display: none;
+  text-transform: uppercase;
+  font-size: calc(100px + (650 - 100) * ((100vw - 150px) / (1700 - 800)));
+}
+
+#pre-loader-logo {
+  z-index: 100;
+  fill: white;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 /*------------------------------------*\
@@ -143,10 +164,21 @@ main {
 .text-block {
   position: absolute;
   text-align: left;
-  max-width: 50%;
+  max-width: 100%;
 }
 
-.text-block .knockout-text {
+@media (min-width: 25rem) {
+  .text-block {
+    max-width: 50%;
+  }
+}
+
+.text-block .text-container {
+  overflow: hidden;
+  height: auto;
+}
+
+.text-block .text-container .knockout-text {
   text-align: left;
   font-size: 10.625rem;
   line-height: .75;
@@ -157,22 +189,25 @@ main {
   font-family: 'Playfair Display', serif;
 }
 
-.text-block .subline-text {
+.text-block .text-container .subline-text {
   text-align: left;
   font-size: 4.375rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0rem 0 0 0;
+  margin: 0;
 }
 
-.text-block .aside-text {
-  position: absolute;
-  left: -0.625rem;
-  bottom: 0.3125rem;
+.text-block .text-container .aside-text {
   text-align: left;
   text-transform: uppercase;
   font-size: 2.25rem;
   margin: 0;
+}
+
+.text-block .text-container--aside {
+  position: absolute;
+  left: -0.625rem;
+  bottom: 0.3125rem;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   -webkit-transform-origin: bottom left;
