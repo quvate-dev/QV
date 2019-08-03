@@ -20,7 +20,8 @@ section {
   height: 100vh;
   position: relative;
   box-sizing: border-box;
-  min-width: calc(100vw - 72px)!important;
+  min-width: 100vw!important;
+/*  min-width: calc(100vw - 72px)!important;*/
 }
 
 #anim-bg {
@@ -34,7 +35,7 @@ section img {
 
 section img:nth-of-type(1) {
   width: 40%;
-  right: 0;
+  right: 200px;
   top: 20%;
 }
 
