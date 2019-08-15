@@ -72,26 +72,22 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
 }
 
-#pre-loader #loader-text {
+#pre-loader #fill {
+  width: 70%;
+  height: 0%;
   position: absolute;
-  left: 0;
-  right: 0;
-}
-
-#pre-loader #loader-text h2 {
-  display: none;
-  text-transform: uppercase;
-  font-size: calc(100px + (650 - 100) * ((100vw - 150px) / (1700 - 800)));
+  bottom: 0;
+  background-color: #fff;
 }
 
 #pre-loader-logo {
@@ -100,6 +96,9 @@ h1 {
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  position: absolute;
+  z-index: 1000;
+  width: 90%;
 }
 
 /*------------------------------------*\
@@ -181,7 +180,7 @@ main {
 .text-block .text-container .knockout-text {
   text-align: left;
   font-size: 10.625rem;
-  line-height: .75;
+  line-height: .9;
   letter-spacing: 1px;
   color: transparent;
   font-weight: 900;
