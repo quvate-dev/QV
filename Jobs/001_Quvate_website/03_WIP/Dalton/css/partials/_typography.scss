@@ -12,3 +12,17 @@ h2,
 h3 {
     @include general_text_style;
 }
+
+.big-text {
+  font-size: calculateRem(170px);
+}
+.med-text {
+  font-size: calculateRem(70px);
+}
+.small-text {
+  font-size: calculateRem(36px);
+}
+
+.text-align-left {
+  text-align: left;
+}

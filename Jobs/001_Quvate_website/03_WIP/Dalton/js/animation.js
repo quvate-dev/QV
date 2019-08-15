@@ -6,6 +6,7 @@
     mainTl.to(["#pre-loader"], 0.5, {autoAlpha: 0, ease: Linear.easeNone}, "+=1");
     mainTl.set(["#pre-loader"], {display: "none"});
   }
+  
   /* Text Block */
   function textBlockAnimation() {      
     var ctrl = new ScrollMagic.Controller({vertical: false});
@@ -13,6 +14,7 @@
     var sectionsArray = Array.from(sections);
 
     sectionsArray.forEach(function(element) {
+      // TODO add something that breaks out of function if none of the elements are found
       var knockOutText = element.querySelector(".knockout-text");
       var sublineText = element.querySelector(".subline-text");
       var asideText = element.querySelector(".aside-text");

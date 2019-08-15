@@ -9,19 +9,8 @@ $(window).on('load', function(){
 
     //place your code here, the scripts are all loaded
     preLoader()
-    textBlockAnimation();
+    // iphoneAnimation();
+    // textBlockAnimation();
 
   });
 });
-
-  /*------------------------------------*\
-    Pre-loader 
-  \*------------------------------------*/
-  
-
-  // document.addEventListener("DOMContentLoaded", () => {
-    // preLoader();
-    // textBlockAnimation();
-    // Run iPhone animation
-    // iphoneAnimation();
-  // });
