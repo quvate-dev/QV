@@ -13,6 +13,7 @@
 h1 {
   margin: 0;
   font-family: 'Playfair Display', serif;
+  line-height: 1;
 }
 
 p,
@@ -143,7 +144,7 @@ main {
   min-height: calc(100vh - 0rem);
   max-height: 100vh;
   width: calc(100vw - 0rem);
-  padding: 10.625rem;
+  padding: 2.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,8 +166,87 @@ main {
   background-color: #303f9f;
 }
 
+@media (min-width: 25rem) {
+  .page {
+    padding: 3.125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .page {
+    padding: 3.75rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .page {
+    padding: 10.625rem;
+  }
+}
+
 #values {
-  width: calc(300vw - 0rem);
+  width: calc(400vw - 0rem);
+}
+
+#contact .knockout-text {
+  font-size: 3.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 25rem) {
+  #contact .knockout-text {
+    font-size: 5.625rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #contact .knockout-text {
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  #contact .knockout-text {
+    font-size: 7.5rem;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #contact .knockout-text {
+    font-size: 9.375rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  #contact .knockout-text {
+    font-size: 10.625rem;
+  }
+}
+
+#contact .subline-text {
+  text-align: left;
+  font-size: 2.1875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 2.1875rem 0 0 0;
+}
+
+@media (min-width: 25rem) {
+  #contact .subline-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #contact .subline-text {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  #contact .subline-text {
+    font-size: 4.375rem;
+  }
 }
 
 /*------------------------------------*\
@@ -175,12 +255,35 @@ main {
 .text-block {
   position: absolute;
   text-align: left;
-  max-width: 100%;
+  max-width: 80%;
+  left: 15%;
 }
 
 @media (min-width: 25rem) {
   .text-block {
-    max-width: 50%;
+    max-width: 70%;
+    left: 20%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .text-block {
+    max-width: 59%;
+    left: 25%;
+  }
+}
+
+@media (min-width: 50rem) {
+  .text-block {
+    max-width: 55%;
+    left: 10%;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  .text-block {
+    max-width: 45%;
+    left: 10%;
   }
 }
 
@@ -191,7 +294,7 @@ main {
 
 .text-block .text-container .knockout-text {
   text-align: left;
-  font-size: 10.625rem;
+  font-size: 3.75rem;
   line-height: .9;
   letter-spacing: 1px;
   color: transparent;
@@ -200,19 +303,85 @@ main {
   font-family: 'Playfair Display', serif;
 }
 
+@media (min-width: 25rem) {
+  .text-block .text-container .knockout-text {
+    font-size: 5.625rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .text-block .text-container .knockout-text {
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .text-block .text-container .knockout-text {
+    font-size: 7.5rem;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  .text-block .text-container .knockout-text {
+    font-size: 9.375rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .text-block .text-container .knockout-text {
+    font-size: 10.625rem;
+  }
+}
+
 .text-block .text-container .subline-text {
   text-align: left;
-  font-size: 4.375rem;
+  font-size: 2.1875rem;
   font-weight: 600;
   text-transform: uppercase;
   margin: 0;
 }
 
+@media (min-width: 25rem) {
+  .text-block .text-container .subline-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .text-block .text-container .subline-text {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .text-block .text-container .subline-text {
+    font-size: 4.375rem;
+  }
+}
+
 .text-block .text-container .aside-text {
   text-align: left;
   text-transform: uppercase;
-  font-size: 2.25rem;
+  font-size: 1.5625rem;
   margin: 0;
+}
+
+@media (min-width: 25rem) {
+  .text-block .text-container .aside-text {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .text-block .text-container .aside-text {
+    font-size: 2.1875rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .text-block .text-container .aside-text {
+    font-size: 2.25rem;
+  }
 }
 
 .text-block .text-container--aside {
@@ -295,5 +464,15 @@ main {
 .value-container .value {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

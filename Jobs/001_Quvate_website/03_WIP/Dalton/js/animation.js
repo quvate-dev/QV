@@ -14,16 +14,22 @@
     var sectionsArray = Array.from(sections);
 
     sectionsArray.forEach(function(element) {
-      // TODO add something that breaks out of function if none of the elements are found
       var knockOutText = element.querySelector(".knockout-text");
       var sublineText = element.querySelector(".subline-text");
       var asideText = element.querySelector(".aside-text");
+
+      // Break out of function if no element found
+      if (!knockOutText) {
+        return;
+      }
 
       var tl = new TimelineMax();
       
       tl.from(knockOutText, 0.5, { y: 500});
       tl.from(sublineText, 0.5, { y: 500}, 0.25);
-      tl.from(asideText, 0.2, { y: 50,}, "-=0.5");
+      if (asideText){
+        tl.from(asideText, 0.2, { y: 50,}, "-=0.5");
+      }
     
       new ScrollMagic.Scene({ 
         triggerElement: element,

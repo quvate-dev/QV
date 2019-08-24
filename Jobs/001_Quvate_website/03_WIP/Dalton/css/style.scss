@@ -57,7 +57,7 @@ h1   { font-size: 2.4rem; } /* =24px */
 #logo {
   z-index: 100;
   fill: $color-100;
-  width: 100%;
+  width: 100%
 }
 
 /*------------------------------------*\
@@ -74,7 +74,7 @@ main {
   min-height: calc(100vh - #{calculateRem(0px)});
   max-height: 100vh;
   width: calc(100vw - #{calculateRem(0px)});
-  padding: calculateRem(170px);
+  padding: calculateRem(40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,48 +84,142 @@ main {
   &:nth-child(odd) {
     background-color: $color-700;
   }
+  @include breakpoint(x-small) {
+    padding: calculateRem(50px);
+  }
+  @include breakpoint(small) {
+    padding: calculateRem(60px);
+  }
+  @include breakpoint(medium) {
+    padding: calculateRem(170px);
+  }
 }
 
 #values {
-  width: calc(300vw - #{calculateRem(0px)});
+  width: calc(400vw - #{calculateRem(0px)});
 }
 
+#contact {
+  .knockout-text {
+    font-size: calculateRem(60px);
+    line-height: 1.2;
+    @include breakpoint(x-small) {
+      font-size: calculateRem(90px);
+    }
+    @include breakpoint(small) {
+      font-size: calculateRem(100px);
+    }
+    @include breakpoint(medium) {
+      font-size: calculateRem(120px);
+    }
+    @include breakpoint(large) {
+      font-size: calculateRem(150px);
+    }
+    @include breakpoint(x-large) {
+      font-size: calculateRem(170px);
+    }
+  }
+  .subline-text {
+    text-align: left;
+    font-size: calculateRem(35px);
+    font-weight: 600;
+    text-transform: uppercase;
+    // margin:#{calculateRem(-20px)} 0 0 0;
+    margin:calculateRem(35px) 0 0 0;
+    @include breakpoint(x-small) {
+      font-size: calculateRem(40px);
+    }
+    @include breakpoint(small) {
+      font-size: calculateRem(50px);
+    }
+    @include breakpoint(x-large) {
+      font-size: calculateRem(70px);
+    }
+  }
+}
 /*------------------------------------*\
     Text-block
 \*------------------------------------*/
 .text-block {
   position: absolute;
   text-align: left;
-  max-width:100%;
+  max-width: 80%;
+  left: 15%;
   @include breakpoint(x-small) {
-    max-width:50%;
+    max-width:70%;
+    left: 20%;
+  }
+  @include breakpoint(small) {
+    max-width:59%;
+    left: 25%;
+  }
+  @include breakpoint(medium) {
+    max-width:55%;
+    left: 10%;
+  }
+  @include breakpoint(large) {
+    max-width:45%;
+    left: 10%;
   }
   .text-container {
     overflow: hidden;
-    height: auto;
+    height: auto;    
     .knockout-text {
       text-align: left;
-      font-size: calculateRem(170px);
+      font-size: calculateRem(60px);
       line-height: .9;
       letter-spacing: 1px;
       color: transparent;
       font-weight: 900;
       -webkit-text-stroke: 1px white; 
       font-family: 'Playfair Display', serif;
+      @include breakpoint(x-small) {
+        font-size: calculateRem(90px);
+      }
+      @include breakpoint(small) {
+        font-size: calculateRem(100px);
+      }
+      @include breakpoint(medium) {
+        font-size: calculateRem(120px);
+      }
+      @include breakpoint(large) {
+        font-size: calculateRem(150px);
+      }
+      @include breakpoint(x-large) {
+        font-size: calculateRem(170px);
+      }
     }
     .subline-text {
       text-align: left;
-      font-size: calculateRem(70px);
+      font-size: calculateRem(35px);
       font-weight: 600;
       text-transform: uppercase;
       // margin:#{calculateRem(-20px)} 0 0 0;
       margin:0;
+      @include breakpoint(x-small) {
+        font-size: calculateRem(40px);
+      }
+      @include breakpoint(small) {
+        font-size: calculateRem(50px);
+      }
+      @include breakpoint(x-large) {
+        font-size: calculateRem(70px);
+      }
     }
     .aside-text {
       text-align: left;
       text-transform: uppercase;
-      font-size: calculateRem(36px);
+      font-size: calculateRem(25px);
       margin: 0;
+      @include breakpoint(x-small) {
+        font-size: calculateRem(28px);
+      }
+      @include breakpoint(small) {
+        font-size: calculateRem(35px);
+      }
+      @include breakpoint(x-large) {
+        font-size: calculateRem(36px);
+      }
     }
     &--aside {
       position: absolute;
@@ -183,6 +277,9 @@ main {
   .value {
     // flex-grow: 1;
     flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     // background-color: #222;
   }
 }
