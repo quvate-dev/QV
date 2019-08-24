@@ -24,16 +24,18 @@
       }
 
       var tl = new TimelineMax();
-      
+      tl.play();  
       tl.from(knockOutText, 0.5, { y: 500});
       tl.from(sublineText, 0.5, { y: 500}, 0.25);
       if (asideText){
         tl.from(asideText, 0.2, { y: 50,}, "-=0.5");
       }
+      // tl.reverse();  
+
     
       new ScrollMagic.Scene({ 
         triggerElement: element,
-        triggerHook: 0.15
+        triggerHook: 0.4
       })
       .setTween(tl)
       .addIndicators({

@@ -11,9 +11,23 @@
   box-sizing: border-box;
   transform: $delay;
 }
-html { font-size: 62.5%; }  /* =10px */
-body { font-size: 1.4rem; background-color: $color-900; } /* =14px */
-h1   { font-size: 2.4rem; } /* =24px */
+
+html {
+  font-size: 62.5%;
+}
+
+/* =10px */
+body {
+  font-size: 1.4rem;
+  background-color: $color-900;
+}
+
+/* =14px */
+h1 {
+  font-size: 2.4rem;
+}
+
+/* =24px */
 /*------------------------------------*\
     Pre-loader
 \*------------------------------------*/
@@ -23,25 +37,31 @@ h1   { font-size: 2.4rem; } /* =24px */
   padding: calculateRem(50px);
   position: absolute;
   z-index: 1000;
-  background-color: $color-900;
+  background-color: #fcaf45;
   display: flex;
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
+  // display: none;
 }
+
 #pre-loader-logo {
   z-index: 100;
   fill: white;
-  // stroke:white;
+  // stroke:red; 
   width: 80%;
   height: 100%;
-  margin:0 auto;
-  // opacity:0;
+  margin: 0 auto;
+  // opacity:0;  
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
-  width: 70%;
-  
+  // width: 100%;
+  height: 90%;
 }
+
 /*------------------------------------*\
     Logo
 \*------------------------------------*/
@@ -56,7 +76,7 @@ h1   { font-size: 2.4rem; } /* =24px */
 
 #logo {
   z-index: 100;
-  fill: $color-100;
+  fill: white;
   width: 100%
 }
 
@@ -81,89 +101,53 @@ main {
   flex: 0 0 auto;
   position: relative;
   background-color: $color-900;
+
   &:nth-child(odd) {
     background-color: $color-700;
   }
+
   @include breakpoint(x-small) {
     padding: calculateRem(50px);
   }
+
   @include breakpoint(small) {
     padding: calculateRem(60px);
   }
+
   @include breakpoint(medium) {
     padding: calculateRem(170px);
   }
 }
 
-#values {
-  width: calc(400vw - #{calculateRem(0px)});
-}
-
-#contact {
-  .knockout-text {
-    font-size: calculateRem(60px);
-    line-height: 1.2;
-    @include breakpoint(x-small) {
-      font-size: calculateRem(90px);
-    }
-    @include breakpoint(small) {
-      font-size: calculateRem(100px);
-    }
-    @include breakpoint(medium) {
-      font-size: calculateRem(120px);
-    }
-    @include breakpoint(large) {
-      font-size: calculateRem(150px);
-    }
-    @include breakpoint(x-large) {
-      font-size: calculateRem(170px);
-    }
-  }
-  .subline-text {
-    text-align: left;
-    font-size: calculateRem(35px);
-    font-weight: 600;
-    text-transform: uppercase;
-    // margin:#{calculateRem(-20px)} 0 0 0;
-    margin:calculateRem(35px) 0 0 0;
-    @include breakpoint(x-small) {
-      font-size: calculateRem(40px);
-    }
-    @include breakpoint(small) {
-      font-size: calculateRem(50px);
-    }
-    @include breakpoint(x-large) {
-      font-size: calculateRem(70px);
-    }
-  }
-}
 /*------------------------------------*\
     Text-block
 \*------------------------------------*/
 .text-block {
-  position: absolute;
+  // position: absolute;
   text-align: left;
   max-width: 80%;
-  left: 15%;
+  position: relative;
+
   @include breakpoint(x-small) {
-    max-width:70%;
-    left: 20%;
+    max-width: 70%;
   }
+
   @include breakpoint(small) {
-    max-width:59%;
-    left: 25%;
+    max-width: 59%;
   }
+
   @include breakpoint(medium) {
-    max-width:55%;
-    left: 10%;
+    max-width: 55%;
   }
+
   @include breakpoint(large) {
-    max-width:45%;
-    left: 10%;
+    max-width: 45%;
   }
+
   .text-container {
     overflow: hidden;
-    height: auto;    
+    height: auto;
+
     .knockout-text {
       text-align: left;
       font-size: calculateRem(60px);
@@ -171,66 +155,80 @@ main {
       letter-spacing: 1px;
       color: transparent;
       font-weight: 900;
-      -webkit-text-stroke: 1px white; 
+      -webkit-text-stroke: 1px white;
       font-family: 'Playfair Display', serif;
+
       @include breakpoint(x-small) {
         font-size: calculateRem(90px);
       }
+
       @include breakpoint(small) {
         font-size: calculateRem(100px);
       }
+
       @include breakpoint(medium) {
         font-size: calculateRem(120px);
       }
+
       @include breakpoint(large) {
         font-size: calculateRem(150px);
       }
+
       @include breakpoint(x-large) {
         font-size: calculateRem(170px);
       }
     }
+
     .subline-text {
       text-align: left;
       font-size: calculateRem(35px);
       font-weight: 600;
       text-transform: uppercase;
       // margin:#{calculateRem(-20px)} 0 0 0;
-      margin:0;
+      margin: 0;
+
       @include breakpoint(x-small) {
         font-size: calculateRem(40px);
       }
+
       @include breakpoint(small) {
         font-size: calculateRem(50px);
       }
+
       @include breakpoint(x-large) {
         font-size: calculateRem(70px);
       }
     }
+
     .aside-text {
       text-align: left;
       text-transform: uppercase;
       font-size: calculateRem(25px);
       margin: 0;
+
       @include breakpoint(x-small) {
         font-size: calculateRem(28px);
       }
+
       @include breakpoint(small) {
         font-size: calculateRem(35px);
       }
+
       @include breakpoint(x-large) {
         font-size: calculateRem(36px);
       }
     }
+
     &--aside {
       position: absolute;
-      left:calculateRem(-10px);
-      bottom:calculateRem(5px);
+      // left:calculateRem(-10px);
+      bottom: calculateRem(5px);
       transform: rotate(-90deg);
       transform-origin: bottom left;
       // height: 50px;
     }
   }
-  
+
 }
 
 /*------------------------------------*\
@@ -246,40 +244,231 @@ main {
   max-height: 100vh;
   overflow: hidden;
   justify-content: space-between;
+
   .vertical-overflow-slider-column {
     display: flex;
     flex-direction: column;
-    
+
     &:nth-child(even) {
       margin-top: calculateRem(100px);
     }
   }
+
   .iphones {
-    max-width:80%;
+    max-width: 80%;
+
     img {
       max-width: 100%;
-      width:100%;
+      width: 100%;
       margin-bottom: calculateRem(70px);
     }
   }
 }
 
 /*------------------------------------*\
+    Home page
+\*------------------------------------*/
+#home {
+  background-color: #222426;
+
+  .text-block {
+    // position: absolute;
+    text-align: left;
+    max-width: 80%;
+    position: relative;
+
+    @include breakpoint(x-small) {
+      max-width: 70%;
+    }
+
+    @include breakpoint(small) {
+      max-width: 59%;
+    }
+
+    @include breakpoint(medium) {
+      max-width: 55%;
+    }
+
+    @include breakpoint(large) {
+      max-width: 45%;
+    }
+  }
+}
+
+/*------------------------------------*\
+    About page
+\*------------------------------------*/
+#about {
+  background-color: #d4a39f;
+}
+
+/*------------------------------------*\
     Values page
 \*------------------------------------*/
-.value-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  flex: 0 0 auto;
-  width:100%;
-  .value {
-    // flex-grow: 1;
-    flex-basis: 20%;
+#values {
+  background-color: #1cb3aa;
+  width: calc(450vw - #{calculateRem(0px)});
+  @include breakpoint(x-small) {
+    width: calc(400vw - #{calculateRem(0px)});
+  }
+  @include breakpoint(small) {
+    width: calc(300vw - #{calculateRem(0px)});
+  }
+  @include breakpoint(medium) {
+    width: calc(250vw - #{calculateRem(0px)});
+  }
+  @include breakpoint(large) {
+    width: calc(1500vw - #{calculateRem(0px)});
+  }
+
+  .value-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // background-color: #222;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex: 0 0 auto;
+    width: 100%;
+
+    .text-block {
+      width: 80vw;
+      @include breakpoint(x-small) {
+        width: 75vw;
+      }
+      @include breakpoint(small) {
+        width: 80%;
+      }
+      @include breakpoint(medium) {
+        width: 80%;
+      }
+      @include breakpoint(large) {
+        width: 20%;
+      }
+    }
+
+    #logo-overlay-cont {
+      position: relative;
+      width: 260vw;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0 auto;
+      background-image: url('https://placeimg.com/640/480/any');
+      background-size: cover;
+      @include breakpoint(x-small) {
+        width: 250vw;
+      }
+      @include breakpoint(small) {
+        width: 80vw;
+      }
+      @include breakpoint(medium) {
+        width: 80vw;
+      }
+      @include breakpoint(large) {
+        width: 80vw;
+      }
+
+      #logo-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 146%;
+      }
+
+      #image-underlay {
+        position: absolute;
+        height: 100vh;
+      }
+
+    }
+
+    .left {
+      left: 15%;
+
+      @include breakpoint(x-small) {
+        left: 20%;
+      }
+
+      @include breakpoint(small) {
+        left: 25%;
+      }
+
+      @include breakpoint(medium) {
+        left: 10%;
+      }
+
+      @include breakpoint(large) {
+        left: 10%;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+    Contact page
+\*------------------------------------*/
+
+#contact {
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: #1573bb;
+
+  .text-block {
+    position: static;
+
+    @include breakpoint(large) {
+      max-width: 70%;
+      left: 10%;
+    }
+
+    .knockout-text {
+      font-size: calculateRem(60px);
+
+      @include breakpoint(x-small) {
+        font-size: calculateRem(66px);
+      }
+
+      @include breakpoint(small) {
+        font-size: calculateRem(70px);
+      }
+
+      @include breakpoint(medium) {
+        font-size: calculateRem(75px);
+      }
+    }
+
+    .subline-text {
+      text-align: left;
+      font-size: calculateRem(40px);
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1;
+      // margin:#{calculateRem(-20px)} 0 0 0;
+      margin: calculateRem(0px) 0 0 0;
+
+      @include breakpoint(x-small) {
+        font-size: calculateRem(45px);
+      }
+
+      @include breakpoint(small) {
+        font-size: calculateRem(50px);
+      }
+
+      @include breakpoint(medium) {
+        font-size: calculateRem(55px);
+      }
+    }
+
+    p {
+      text-align: left;
+      line-height: 1.4;
+      font-weight: normal;
+      font-size: calculateRem(25px);
+
+      b {
+        font-weight: 900;
+      }
+    }
   }
 }

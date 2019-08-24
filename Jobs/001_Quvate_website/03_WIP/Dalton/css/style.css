@@ -85,7 +85,7 @@ h1 {
   padding: 3.125rem;
   position: absolute;
   z-index: 1000;
-  background-color: #1a237e;
+  background-color: #fcaf45;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,8 +106,12 @@ h1 {
   height: 100%;
   margin: 0 auto;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 1000;
-  width: 70%;
+  height: 90%;
 }
 
 /*------------------------------------*\
@@ -124,7 +128,7 @@ h1 {
 
 #logo {
   z-index: 100;
-  fill: #c5cae9;
+  fill: white;
   width: 100%;
 }
 
@@ -184,106 +188,36 @@ main {
   }
 }
 
-#values {
-  width: calc(400vw - 0rem);
-}
-
-#contact .knockout-text {
-  font-size: 3.75rem;
-  line-height: 1.2;
-}
-
-@media (min-width: 25rem) {
-  #contact .knockout-text {
-    font-size: 5.625rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  #contact .knockout-text {
-    font-size: 6.25rem;
-  }
-}
-
-@media (min-width: 50rem) {
-  #contact .knockout-text {
-    font-size: 7.5rem;
-  }
-}
-
-@media (min-width: 64.375rem) {
-  #contact .knockout-text {
-    font-size: 9.375rem;
-  }
-}
-
-@media (min-width: 85rem) {
-  #contact .knockout-text {
-    font-size: 10.625rem;
-  }
-}
-
-#contact .subline-text {
-  text-align: left;
-  font-size: 2.1875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 2.1875rem 0 0 0;
-}
-
-@media (min-width: 25rem) {
-  #contact .subline-text {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  #contact .subline-text {
-    font-size: 3.125rem;
-  }
-}
-
-@media (min-width: 85rem) {
-  #contact .subline-text {
-    font-size: 4.375rem;
-  }
-}
-
 /*------------------------------------*\
     Text-block
 \*------------------------------------*/
 .text-block {
-  position: absolute;
   text-align: left;
   max-width: 80%;
-  left: 15%;
+  position: relative;
 }
 
 @media (min-width: 25rem) {
   .text-block {
     max-width: 70%;
-    left: 20%;
   }
 }
 
 @media (min-width: 37.5rem) {
   .text-block {
     max-width: 59%;
-    left: 25%;
   }
 }
 
 @media (min-width: 50rem) {
   .text-block {
     max-width: 55%;
-    left: 10%;
   }
 }
 
 @media (min-width: 64.375rem) {
   .text-block {
     max-width: 45%;
-    left: 10%;
   }
 }
 
@@ -386,7 +320,6 @@ main {
 
 .text-block .text-container--aside {
   position: absolute;
-  left: -0.625rem;
   bottom: 0.3125rem;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -441,9 +374,82 @@ main {
 }
 
 /*------------------------------------*\
+    Home page
+\*------------------------------------*/
+#home {
+  background-color: #222426;
+}
+
+#home .text-block {
+  text-align: left;
+  max-width: 80%;
+  position: relative;
+}
+
+@media (min-width: 25rem) {
+  #home .text-block {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #home .text-block {
+    max-width: 59%;
+  }
+}
+
+@media (min-width: 50rem) {
+  #home .text-block {
+    max-width: 55%;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #home .text-block {
+    max-width: 45%;
+  }
+}
+
+/*------------------------------------*\
+    About page
+\*------------------------------------*/
+#about {
+  background-color: #d4a39f;
+}
+
+/*------------------------------------*\
     Values page
 \*------------------------------------*/
-.value-container {
+#values {
+  background-color: #1cb3aa;
+  width: calc(450vw - 0rem);
+}
+
+@media (min-width: 25rem) {
+  #values {
+    width: calc(400vw - 0rem);
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #values {
+    width: calc(300vw - 0rem);
+  }
+}
+
+@media (min-width: 50rem) {
+  #values {
+    width: calc(250vw - 0rem);
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #values {
+    width: calc(1500vw - 0rem);
+  }
+}
+
+#values .value-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,8 +457,12 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-flex: 0;
@@ -461,18 +471,195 @@ main {
   width: 100%;
 }
 
-.value-container .value {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
+#values .value-container .text-block {
+  width: 80vw;
+}
+
+@media (min-width: 25rem) {
+  #values .value-container .text-block {
+    width: 75vw;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #values .value-container .text-block {
+    width: 80%;
+  }
+}
+
+@media (min-width: 50rem) {
+  #values .value-container .text-block {
+    width: 80%;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #values .value-container .text-block {
+    width: 20%;
+  }
+}
+
+#values .value-container #logo-overlay-cont {
+  position: relative;
+  width: 260vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+  background-image: url("https://placeimg.com/640/480/any");
+  background-size: cover;
+}
+
+@media (min-width: 25rem) {
+  #values .value-container #logo-overlay-cont {
+    width: 250vw;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #values .value-container #logo-overlay-cont {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 50rem) {
+  #values .value-container #logo-overlay-cont {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #values .value-container #logo-overlay-cont {
+    width: 80vw;
+  }
+}
+
+#values .value-container #logo-overlay-cont #logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 146%;
+}
+
+#values .value-container #logo-overlay-cont #image-underlay {
+  position: absolute;
+  height: 100vh;
+}
+
+#values .value-container .left {
+  left: 15%;
+}
+
+@media (min-width: 25rem) {
+  #values .value-container .left {
+    left: 20%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #values .value-container .left {
+    left: 25%;
+  }
+}
+
+@media (min-width: 50rem) {
+  #values .value-container .left {
+    left: 10%;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #values .value-container .left {
+    left: 10%;
+  }
+}
+
+/*------------------------------------*\
+    Contact page
+\*------------------------------------*/
+#contact {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1573bb;
+}
+
+#contact .text-block {
+  position: static;
+}
+
+@media (min-width: 64.375rem) {
+  #contact .text-block {
+    max-width: 70%;
+    left: 10%;
+  }
+}
+
+#contact .text-block .knockout-text {
+  font-size: 3.75rem;
+}
+
+@media (min-width: 25rem) {
+  #contact .text-block .knockout-text {
+    font-size: 4.125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #contact .text-block .knockout-text {
+    font-size: 4.375rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  #contact .text-block .knockout-text {
+    font-size: 4.6875rem;
+  }
+}
+
+#contact .text-block .subline-text {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0rem 0 0 0;
+}
+
+@media (min-width: 25rem) {
+  #contact .text-block .subline-text {
+    font-size: 2.8125rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #contact .text-block .subline-text {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  #contact .text-block .subline-text {
+    font-size: 3.4375rem;
+  }
+}
+
+#contact .text-block p {
+  text-align: left;
+  line-height: 1.4;
+  font-weight: normal;
+  font-size: 1.5625rem;
+}
+
+#contact .text-block p b {
+  font-weight: 900;
 }
 /*# sourceMappingURL=style.css.map */
