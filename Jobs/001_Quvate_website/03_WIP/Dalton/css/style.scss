@@ -35,7 +35,7 @@ h1 {
   width: 100vw;
   height: 100vh;
   padding: calculateRem(50px);
-  position: absolute;
+  // position: absolute;
   z-index: 1000;
   background-color: #fcaf45;
   display: flex;
@@ -87,7 +87,8 @@ h1 {
 main {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  // overflow-x: auto;
+  overflow: scroll;
 }
 
 .page {

@@ -3,8 +3,12 @@
   \*------------------------------------*/
   function preLoader() {
     var mainTl = new TimelineMax();
-    mainTl.to(["#pre-loader"], 0.5, {autoAlpha: 0, ease: Linear.easeNone}, "+=1");
-    mainTl.set(["#pre-loader"], {display: "none"});
+    // mainTl.to([window], 0.5, {scrollTo: {y: 0, x: "max", autoKill: false }, ease: Linear.easeNone}, "+=1");
+    // TweenLite.to(["#pre-loader"], 2, {scrollTo:{x:1200}, ease:Power2.easeOut});
+    TweenLite.to(window, 1, {scrollTo:{x:"#home", autoKill:false}});
+    // TODO make it scroll to next section
+    // mainTl.to(["#pre-loader"], 0.5, {autoAlpha: 0, ease: Linear.easeNone}, "+=1");
+    // mainTl.set(["#pre-loader"], {display: "none"});
   }
   
   /* Text Block */
