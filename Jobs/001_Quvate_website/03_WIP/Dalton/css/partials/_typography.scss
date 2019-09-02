@@ -14,14 +14,61 @@ h3 {
     @include general_text_style;
 }
 
+a {
+  &:hover {
+    border-bottom: 1px solid white;
+  }
+}
+
 .big-text {
-  font-size: calculateRem(170px);
+  font-size: calculateRem(60px);
+  @include breakpoint(x-small) {
+    font-size: calculateRem(90px);
+  }
+
+  @include breakpoint(small) {
+    font-size: calculateRem(100px);
+  }
+
+  @include breakpoint(medium) {
+    font-size: calculateRem(120px);
+  }
+
+  @include breakpoint(large) {
+    font-size: calculateRem(140px);
+  }
+
+  @include breakpoint(x-large) {
+    font-size: calculateRem(160px);
+  }
 }
 .med-text {
-  font-size: calculateRem(70px);
+  font-size: calculateRem(35px);
+  @include breakpoint(x-small) {
+    font-size: calculateRem(40px);
+  }
+
+  @include breakpoint(small) {
+    font-size: calculateRem(50px);
+  }
+
+  @include breakpoint(x-large) {
+    font-size: calculateRem(70px);
+  }
 }
 .small-text {
-  font-size: calculateRem(36px);
+  font-size: calculateRem(20px);
+  @include breakpoint(x-small) {
+    font-size: calculateRem(26px);
+  }
+
+  @include breakpoint(small) {
+    font-size: calculateRem(32px);
+  }
+
+  @include breakpoint(x-large) {
+    font-size: calculateRem(36px);
+  }
 }
 
 .text-align-left {

@@ -34,16 +34,86 @@ h3 {
   text-rendering: optimizeLegibility;
 }
 
+a:hover {
+  border-bottom: 1px solid white;
+}
+
 .big-text {
-  font-size: 10.625rem;
+  font-size: 3.75rem;
+}
+
+@media (min-width: 25rem) {
+  .big-text {
+    font-size: 5.625rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .big-text {
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .big-text {
+    font-size: 7.5rem;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  .big-text {
+    font-size: 8.75rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .big-text {
+    font-size: 10rem;
+  }
 }
 
 .med-text {
-  font-size: 4.375rem;
+  font-size: 2.1875rem;
+}
+
+@media (min-width: 25rem) {
+  .med-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .med-text {
+    font-size: 3.125rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .med-text {
+    font-size: 4.375rem;
+  }
 }
 
 .small-text {
-  font-size: 2.25rem;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 25rem) {
+  .small-text {
+    font-size: 1.625rem;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .small-text {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 85rem) {
+  .small-text {
+    font-size: 2.25rem;
+  }
 }
 
 .text-align-left {
@@ -147,7 +217,7 @@ main {
   min-height: calc(100vh - 0rem);
   max-height: 100vh;
   width: calc(100vw - 0rem);
-  padding: 2.5rem;
+  padding: 3.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,13 +241,13 @@ main {
 
 @media (min-width: 25rem) {
   .page {
-    padding: 3.125rem;
+    padding: 3.75rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .page {
-    padding: 3.75rem;
+    padding: 4.375rem;
   }
 }
 
@@ -227,7 +297,6 @@ main {
 
 .text-block .text-container .knockout-text {
   text-align: left;
-  font-size: 3.75rem;
   line-height: .9;
   letter-spacing: 1px;
   color: transparent;
@@ -236,85 +305,17 @@ main {
   font-family: 'Playfair Display', serif;
 }
 
-@media (min-width: 25rem) {
-  .text-block .text-container .knockout-text {
-    font-size: 5.625rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .text-block .text-container .knockout-text {
-    font-size: 6.25rem;
-  }
-}
-
-@media (min-width: 50rem) {
-  .text-block .text-container .knockout-text {
-    font-size: 7.5rem;
-  }
-}
-
-@media (min-width: 64.375rem) {
-  .text-block .text-container .knockout-text {
-    font-size: 9.375rem;
-  }
-}
-
-@media (min-width: 85rem) {
-  .text-block .text-container .knockout-text {
-    font-size: 10.625rem;
-  }
-}
-
 .text-block .text-container .subline-text {
   text-align: left;
-  font-size: 2.1875rem;
   font-weight: 600;
   text-transform: uppercase;
   margin: 0;
 }
 
-@media (min-width: 25rem) {
-  .text-block .text-container .subline-text {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .text-block .text-container .subline-text {
-    font-size: 3.125rem;
-  }
-}
-
-@media (min-width: 85rem) {
-  .text-block .text-container .subline-text {
-    font-size: 4.375rem;
-  }
-}
-
 .text-block .text-container .aside-text {
   text-align: left;
   text-transform: uppercase;
-  font-size: 1.5625rem;
   margin: 0;
-}
-
-@media (min-width: 25rem) {
-  .text-block .text-container .aside-text {
-    font-size: 1.75rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .text-block .text-container .aside-text {
-    font-size: 2.1875rem;
-  }
-}
-
-@media (min-width: 85rem) {
-  .text-block .text-container .aside-text {
-    font-size: 2.25rem;
-  }
 }
 
 .text-block .text-container--aside {
@@ -421,30 +422,30 @@ main {
 \*------------------------------------*/
 #values {
   background-color: #1cb3aa;
-  width: calc(450vw - 0rem);
+  width: calc(340vw - 0rem);
 }
 
 @media (min-width: 25rem) {
-  #values {
-    width: calc(400vw - 0rem);
-  }
-}
-
-@media (min-width: 37.5rem) {
   #values {
     width: calc(300vw - 0rem);
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 37.5rem) {
   #values {
     width: calc(250vw - 0rem);
   }
 }
 
+@media (min-width: 50rem) {
+  #values {
+    width: calc(220vw - 0rem);
+  }
+}
+
 @media (min-width: 64.375rem) {
   #values {
-    width: calc(1500vw - 0rem);
+    width: calc(150vw - 0rem);
   }
 }
 
@@ -494,13 +495,13 @@ main {
 
 @media (min-width: 64.375rem) {
   #values .value-container .text-block {
-    width: 20%;
+    width: 40%;
   }
 }
 
 #values .value-container #logo-overlay-cont {
   position: relative;
-  width: 260vw;
+  width: 200vw;
   height: 100vh;
   overflow: hidden;
   margin: 0 auto;
@@ -510,19 +511,19 @@ main {
 
 @media (min-width: 25rem) {
   #values .value-container #logo-overlay-cont {
-    width: 250vw;
+    width: 160vw;
   }
 }
 
 @media (min-width: 37.5rem) {
   #values .value-container #logo-overlay-cont {
-    width: 80vw;
+    width: 125vw;
   }
 }
 
 @media (min-width: 50rem) {
   #values .value-container #logo-overlay-cont {
-    width: 80vw;
+    width: 100vw;
   }
 }
 
@@ -602,53 +603,12 @@ main {
   }
 }
 
-#contact .text-block .knockout-text {
-  font-size: 3.75rem;
-}
-
-@media (min-width: 25rem) {
-  #contact .text-block .knockout-text {
-    font-size: 4.125rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  #contact .text-block .knockout-text {
-    font-size: 4.375rem;
-  }
-}
-
-@media (min-width: 50rem) {
-  #contact .text-block .knockout-text {
-    font-size: 4.6875rem;
-  }
-}
-
 #contact .text-block .subline-text {
   text-align: left;
-  font-size: 2.5rem;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
   margin: 0rem 0 0 0;
-}
-
-@media (min-width: 25rem) {
-  #contact .text-block .subline-text {
-    font-size: 2.8125rem;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  #contact .text-block .subline-text {
-    font-size: 3.125rem;
-  }
-}
-
-@media (min-width: 50rem) {
-  #contact .text-block .subline-text {
-    font-size: 3.4375rem;
-  }
 }
 
 #contact .text-block p {
