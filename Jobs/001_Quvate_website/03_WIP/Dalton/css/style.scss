@@ -224,6 +224,8 @@ main {
 \*------------------------------------*/
 #home {
   background-color: #222426;
+  position: fixed;
+  z-index: -2;
 
   .text-block {
     // position: absolute;
@@ -254,6 +256,7 @@ main {
 \*------------------------------------*/
 #about {
   background-color: #d4a39f;
+  margin-left: 100vw;
 }
 
 /*------------------------------------*\

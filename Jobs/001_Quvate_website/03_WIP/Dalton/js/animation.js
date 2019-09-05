@@ -1,4 +1,4 @@
- /*------------------------------------*\
+  /*------------------------------------*\
     Animation
   \*------------------------------------*/
   function preLoader() {
@@ -10,7 +10,50 @@
     mainTl.to(["#pre-loader"], 0.5, {autoAlpha: 0, ease: Linear.easeNone}, "+=1");
     mainTl.set(["#pre-loader"], {display: "none"});
   }
+
+  // var count = 0;
+  // setInterval(() => {
+  //   if(count == 0){
+  //     count =+ 1;
+  //   } else {
+  //     count = 0;
+  //   }
+  //   console.log("count = " + count);
+  // }, 3000);
+  // /* Text Swap */
+  // function textSwap() {
+  //   if(count > 0) {
+  //     $(".text-one").hide();
+  //     $(".text-two").show();
+  //     count = 0;
+  //   } else {
+  //     $(".text-one").show();
+  //     $(".text-two").hide();
+  //     count ++;
+  //   }
+  // }
   
+  var textObj = {
+    "home" : {
+      "knockoutText" : {
+        "text-one" : "text-one",
+        "text-two" : "text-two",
+      },
+      "sublineText" : {
+        "text-one" : "lorem",
+        "text-two" : "lorem2",
+      },
+      "asideText" : {
+        "text-one" : "lorem",
+        "text-two" : "lorem2",
+      }
+    }    
+  }
+
+  var homeKnockout = document.getElementById("home").querySelector(".knockout-text");
+  // var home = document.getElementById('home').querySelector('.text-one');
+  // console.log(homeKnockout);
+
   /* Text Block */
   function textBlockAnimation() {      
     var ctrl = new ScrollMagic.Controller({vertical: false});
@@ -25,11 +68,26 @@
       // Break out of function if no element found
       if (!knockOutText) {
         return;
+      } else {
+        // TODO need to do something like like but triggered with greensock
+        // if(count > 0) {
+        //   knockOutText.innerHTML = textObj.home.knockoutText["text-one"];          
+        // } else {
+        //   knockOutText.innerHTML = textObj.home.knockoutText["text-two"];
+        // }        
       }
+      console.log(element);
+      console.log(1);
 
       var tl = new TimelineMax();
-      tl.play();  
-      tl.from(knockOutText, 0.5, { y: 500});
+      tl.play();
+
+      // todo try to swap text with gsap
+      // tl.set(knockOutText,{text:"rtest"});
+      // TweenLite.to(knockOutText, 1, {text:{value:"Your new text"}});
+      tl.set(knockOutText, {text:"This is the new text"}, 0);
+
+      tl.from(knockOutText, 0.5, { y: 500, text:"This is the new text"});
       tl.from(sublineText, 0.5, { y: 500}, 0.25);
       if (asideText){
         tl.from(asideText, 0.2, { y: 50,}, "-=0.5");
