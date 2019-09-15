@@ -77,7 +77,13 @@ h1 {
 #logo {
   z-index: 100;
   fill: white;
-  width: 100%
+  width: 100%;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  &:hover {
+    transition-duration: 60s;
+    transform: rotate(360000deg) scale(1.1);
+  }
 }
 
 /*------------------------------------*\

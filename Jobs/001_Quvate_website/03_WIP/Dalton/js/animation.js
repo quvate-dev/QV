@@ -7,60 +7,84 @@
     // TweenLite.to(["#pre-loader"], 2, {scrollTo:{x:1200}, ease:Power2.easeOut});
     // TweenLite.to(window, 1, {scrollTo:{x:"#home", autoKill:false}});
     // TODO make it scroll to next section
-    mainTl.to(["#pre-loader"], 0.5, {autoAlpha: 0, ease: Linear.easeNone}, "+=1");
-    mainTl.set(["#pre-loader"], {display: "none"});
+    mainTl.to(["#pre-loader"], 0.5, {
+      autoAlpha: 0,
+      ease: Linear.easeNone
+    }, "+=1");
+    mainTl.set(["#pre-loader"], {
+      display: "none"
+    });
   }
 
-  // var count = 0;
-  // setInterval(() => {
-  //   if(count == 0){
-  //     count =+ 1;
-  //   } else {
-  //     count = 0;
-  //   }
-  //   console.log("count = " + count);
-  // }, 3000);
-  // /* Text Swap */
-  // function textSwap() {
-  //   if(count > 0) {
-  //     $(".text-one").hide();
-  //     $(".text-two").show();
-  //     count = 0;
-  //   } else {
-  //     $(".text-one").show();
-  //     $(".text-two").hide();
-  //     count ++;
-  //   }
-  // }
-  
+  var count = 0;
+
   var textObj = {
-    "home" : {
-      "knockoutText" : {
-        "text-one" : "text-one",
-        "text-two" : "text-two",
+    "home": {
+      "knockout-text": {
+        0: "We are a",
+        1: "Lorem ips",
       },
-      "sublineText" : {
-        "text-one" : "lorem",
-        "text-two" : "lorem2",
+      "subline-text": {
+        0: "Marketing agency for brands that want more",
+        1: "Lorem ipsum dolor sit amet consecte elit",
       },
-      "asideText" : {
-        "text-one" : "lorem",
-        "text-two" : "lorem2",
+      "aside-text": {
+        0: "Who are we",
+        1: "Lorem ipsu",
       }
-    }    
+    },
+    "about": {
+      "knockout-text": {
+        0: "We're sweet at",
+        1: "We love making",
+      },
+      "subline-text": {
+        0: "Beautiful digital ads, emails & landing pages",
+        1: "Lorem ipsum dolor sit amet consecte elit",
+      },
+      "aside-text": {
+        0: "Innovation",
+        1: "Creativity",
+      }
+    },
+    "contact": {
+      "knockout-text": {
+        0: "interested in us?",
+        1: "text-two",
+      },
+      "subline-text": {
+        0: "Lets work together",
+        1: "text-two",
+      }
+    }
   }
 
-  var homeKnockout = document.getElementById("home").querySelector(".knockout-text");
-  // var home = document.getElementById('home').querySelector('.text-one');
-  // console.log(homeKnockout);
+  function textSwap(page, element, text) {
+    document.getElementById(page).querySelector("." + element).innerHTML = textObj[page][element][text];
+  }
+
+  setInterval(() => {
+    count == 0 ? count = +1 : count = 0;
+
+    textSwap("home", "knockout-text", count);
+    textSwap("home", "subline-text", count);
+    textSwap("home", "aside-text", count);
+    textSwap("about", "knockout-text", count);
+    textSwap("about", "subline-text", count);
+    textSwap("about", "aside-text", count);
+    textSwap("contact", "knockout-text", count);
+    textSwap("contact", "subline-text", count);
+  }, 6000);
 
   /* Text Block */
-  function textBlockAnimation() {      
-    var ctrl = new ScrollMagic.Controller({vertical: false});
+  function textBlockAnimation() {
+    var ctrl = new ScrollMagic.Controller({
+      vertical: false
+    });
     var sections = document.getElementsByTagName("section");
     var sectionsArray = Array.from(sections);
 
-    sectionsArray.forEach(function(element) {
+    sectionsArray.forEach(function (element) {
       var knockOutText = element.querySelector(".knockout-text");
       var sublineText = element.querySelector(".subline-text");
       var asideText = element.querySelector(".aside-text");
@@ -70,63 +94,77 @@
         return;
       } else {
         // TODO need to do something like like but triggered with greensock
-        // if(count > 0) {
-        //   knockOutText.innerHTML = textObj.home.knockoutText["text-one"];          
-        // } else {
-        //   knockOutText.innerHTML = textObj.home.knockoutText["text-two"];
-        // }        
       }
-      console.log(element);
-      console.log(1);
 
       var tl = new TimelineMax();
-      tl.play();
+      // tl.play();
 
       // todo try to swap text with gsap
       // tl.set(knockOutText,{text:"rtest"});
       // TweenLite.to(knockOutText, 1, {text:{value:"Your new text"}});
-      tl.set(knockOutText, {text:"This is the new text"}, 0);
+      // tl.set(knockOutText, {text:"This is the new text"}, 0);
 
-      tl.from(knockOutText, 0.5, { y: 500, text:"This is the new text"});
-      tl.from(sublineText, 0.5, { y: 500}, 0.25);
-      if (asideText){
-        tl.from(asideText, 0.2, { y: 50,}, "-=0.5");
+      tl.from(knockOutText, 0.5, {y: 500});
+      tl.from(sublineText, 0.5, {y: 500}, 0.25);
+      if (asideText) {
+        tl.from(asideText, 0.2, {y: 50,}, "-=0.5");
       }
       // tl.reverse();  
 
-    
-      new ScrollMagic.Scene({ 
-        triggerElement: element,
-        triggerHook: 0.4
-      })
-      .setTween(tl)
-      .addIndicators({
-        colorTrigger: "white",
-        colorStart: "white",
-        colorEnd: "white",
-        indent: 40
-      })
-      .addTo(ctrl);
-    });  
+
+      new ScrollMagic.Scene({
+          triggerElement: element,
+          triggerHook: 0.4
+        })
+        .setTween(tl)
+        .addIndicators({
+          colorTrigger: "white",
+          colorStart: "white",
+          colorEnd: "white",
+          indent: 40
+        })
+        .addTo(ctrl);
+    });
   }
+
+  // Prevent scrolling triggering back or forward
+  document.querySelector("main").addEventListener('mousewheel', function(event) {
+    // We don't want to scroll below zero or above the width and height 
+    var maxX = this.scrollWidth - this.offsetWidth;
+    var maxY = this.scrollHeight - this.offsetHeight;
+
+    // If this event looks like it will scroll beyond the bounds of the element, prevent it and set the scroll to the boundary manually 
+    if (this.scrollLeft + event.deltaX < 0 || 
+      this.scrollLeft + event.deltaX > maxX || 
+      this.scrollTop + event.deltaY < 0 || 
+      this.scrollTop + event.deltaY > maxY) {
+
+      event.preventDefault();
+
+      // Manually set the scroll to the boundary
+      this.scrollLeft = Math.max(0, Math.min(maxX, this.scrollLeft + event.deltaX));
+      this.scrollTop = Math.max(0, Math.min(maxY, this.scrollTop + event.deltaY));
+    }
+  }, false);
 
   /* iPhone */
   function iphoneAnimation() {
-    var iphonesTl = new TimelineLite({onComplete:function() {
-      this.restart()}
+    var iphonesTl = new TimelineLite({
+      onComplete: function () {
+        this.restart()
+      }
     });
     var dur = 25;
     var defaultEase = Linear.easeNone;
 
-    iphonesTl.set(["#iphones-group-3"], {yPercent: -100});
-    iphonesTl.set(["#iphones-group-4"], {yPercent: -100});
-    iphonesTl.to(["#iphones-group-1"], dur, {yPercent: -100,ease: defaultEase}, 0);
-    iphonesTl.to(["#iphones-group-2"], dur, {yPercent: -100,ease: defaultEase}, 0);
-    iphonesTl.to(["#iphones-group-3"], dur, {yPercent: 0,ease: defaultEase}, 0);
-    iphonesTl.to(["#iphones-group-4"], dur, {yPercent: 0,ease: defaultEase}, 0);
-
-    iphonesTl.set(["#iphones-group-1"], {yPercent: 0});
-    iphonesTl.set(["#iphones-group-2"], {yPercent: 0});
-    iphonesTl.set(["#iphones-group-3"], {yPercent: -100});
-    iphonesTl.set(["#iphones-group-4"], {yPercent: -100}); 
+    iphonesTl.set(["#iphones-group-3"], { yPercent: -100 });
+    iphonesTl.set(["#iphones-group-4"], { yPercent: -100 });
+    iphonesTl.to(["#iphones-group-1"], dur, { yPercent: -100, ease: defaultEase }, 0);
+    iphonesTl.to(["#iphones-group-2"], dur, { yPercent: -100, ease: defaultEase }, 0);
+    iphonesTl.to(["#iphones-group-3"], dur, { yPercent: 0, ease: defaultEase }, 0);
+    iphonesTl.to(["#iphones-group-4"], dur, { yPercent: 0, ease: defaultEase }, 0);
+    iphonesTl.set(["#iphones-group-1"], { yPercent: 0 });
+    iphonesTl.set(["#iphones-group-2"], { yPercent: 0 });
+    iphonesTl.set(["#iphones-group-3"], { yPercent: -100 });
+    iphonesTl.set(["#iphones-group-4"], { yPercent: -100 });
   }
