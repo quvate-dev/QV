@@ -1,20 +1,7 @@
   /*------------------------------------*\
     Animation
   \*------------------------------------*/
-  function preLoader() {
-    var mainTl = new TimelineMax();
-    // mainTl.to([window], 0.5, {scrollTo: {y: 0, x: "max", autoKill: false }, ease: Linear.easeNone}, "+=1");
-    // TweenLite.to(["#pre-loader"], 2, {scrollTo:{x:1200}, ease:Power2.easeOut});
-    // TweenLite.to(window, 1, {scrollTo:{x:"#home", autoKill:false}});
-    // TODO make it scroll to next section
-    mainTl.to(["#pre-loader"], 0.5, {
-      autoAlpha: 0,
-      ease: Linear.easeNone
-    }, "+=1");
-    mainTl.set(["#pre-loader"], {
-      display: "none"
-    });
-  }
+
 
   var count = 0;
 
@@ -63,19 +50,6 @@
     document.getElementById(page).querySelector("." + element).innerHTML = textObj[page][element][text];
   }
 
-  setInterval(() => {
-    count == 0 ? count = +1 : count = 0;
-
-    textSwap("home", "knockout-text", count);
-    textSwap("home", "subline-text", count);
-    textSwap("home", "aside-text", count);
-    textSwap("about", "knockout-text", count);
-    textSwap("about", "subline-text", count);
-    textSwap("about", "aside-text", count);
-    textSwap("contact", "knockout-text", count);
-    textSwap("contact", "subline-text", count);
-  }, 6000);
-
   /* Text Block */
   function textBlockAnimation() {
     var ctrl = new ScrollMagic.Controller({
@@ -96,6 +70,19 @@
         // TODO need to do something like like but triggered with greensock
       }
 
+      setInterval(() => {
+        count == 0 ? count = +1 : count = 0;
+    
+        textSwap("home", "knockout-text", count);
+        textSwap("home", "subline-text", count);
+        textSwap("home", "aside-text", count);
+        textSwap("about", "knockout-text", count);
+        textSwap("about", "subline-text", count);
+        textSwap("about", "aside-text", count);
+        textSwap("contact", "knockout-text", count);
+        textSwap("contact", "subline-text", count);
+      }, 6000);
+
       var tl = new TimelineMax();
       // tl.play();
 
@@ -110,7 +97,6 @@
         tl.from(asideText, 0.2, {y: 50,}, "-=0.5");
       }
       // tl.reverse();  
-
 
       new ScrollMagic.Scene({
           triggerElement: element,
@@ -168,3 +154,89 @@
     iphonesTl.set(["#iphones-group-3"], { yPercent: -100 });
     iphonesTl.set(["#iphones-group-4"], { yPercent: -100 });
   }
+
+  function preLoader() {
+    var preloaderTl = new TimelineMax({onComplete:quvateAnimation});
+    // mainTl.to([window], 0.5, {scrollTo: {y: 0, x: "max", autoKill: false }, ease: Linear.easeNone}, "+=1");
+    // TweenLite.to(["#pre-loader"], 2, {scrollTo:{x:1200}, ease:Power2.easeOut});
+    // TweenLite.to(window, 1, {scrollTo:{x:"#home", autoKill:false}});
+    // TODO make it scroll to next section
+    // mainTl.to(["#pre-loader"], 0.5, {
+    //   autoAlpha: 0,
+    //   ease: Linear.easeNone
+    // }, "+=1");
+    // mainTl.set(["#pre-loader"], {
+    //   display: "none"
+    // });
+    preloaderTl.to([".preloader"], 0.5, {
+      opacity: 1,
+      ease: Linear.easeNone
+    }, "+=1");
+    preloaderTl.from(".preloader", 0.5, {width: "0", ease: Expo.easeOut}, "+=" + 0.2);
+    preloaderTl.to(".content", 1.2, {height:"230px", marginBottom: "20px", ease:Elastic.easeOut}, "-=" + 0.5);
+  }
+
+
+function quvateAnimation(){
+  var svg = document.getElementById("svg");
+  var s = Snap(svg);
+
+  var letter_q = Snap.select('#letter_q');
+  var letter_u = Snap.select('#letter_u');
+  var letter_v = Snap.select('#letter_v');
+  var letter_a = Snap.select('#letter_a');
+  var letter_t = Snap.select('#letter_t');
+  var letter_e = Snap.select('#letter_e');
+
+  var q_path = letter_q.node.getAttribute('d');
+  var u_path = letter_u.node.getAttribute('d');
+  var v_path = letter_v.node.getAttribute('d');
+  var a_path = letter_a.node.getAttribute('d');
+  var t_path = letter_t.node.getAttribute('d');
+  var e_path = letter_e.node.getAttribute('d');
+    
+  var end_anim = function(){
+    var preloaderTl = new TimelineMax({onComplete:textBlockAnimation});
+    var dur = 1;
+    preloaderTl.delay(1)
+    preloaderTl.to(".content", 1.1, {height:"0", ease:Expo.easeOut});
+    preloaderTl.to("#pre-loader-logo", 1, { y: "100px", ease:Expo.easeOut}, "-=1");
+    preloaderTl.to(".preloader", 1, {width: "0", ease: Expo.easeOut}, "-=" + 0.5);
+    preloaderTl.to(["#pre-loader-container"], 0.5, { autoAlpha: 0, ease: Linear.easeNone }, "+=0.5");
+    preloaderTl.set(["#pre-loader-container"], { display: "none" });
+    preloaderTl.set(["body"], { overflow: "auto" });
+    // preloaderTl.from(["#home"], 0.5, { autoAlpha: 0, ease: Linear.easeNone }, "+=0.2");
+
+  }
+
+  var letterMorphTiming = 250;
+    
+  var e_anim = function(){
+    letter_q.animate({ d: e_path }, letterMorphTiming, mina.backout, end_anim);  
+  }
+
+  var t_anim = function(){
+    letter_q.animate({ d: t_path }, letterMorphTiming, mina.elastic, e_anim);  
+  }
+
+  var a_anim = function(){
+    letter_q.animate({ d: a_path }, letterMorphTiming, mina.elastic, t_anim);  
+  }
+
+  var v_anim = function(){
+    letter_q.animate({ d: v_path }, letterMorphTiming, mina.elastic, a_anim);  
+  }
+
+  var u_anim = function(){
+    letter_q.animate({ d: u_path }, letterMorphTiming, mina.elastic, v_anim);  
+  }
+
+  var q_anim = function(){
+    letter_q.animate({ d: q_path }, letterMorphTiming, mina.elastic, u_anim); 
+  }
+
+q_anim();
+  
+}
+
+// init();

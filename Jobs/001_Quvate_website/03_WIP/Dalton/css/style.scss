@@ -8,82 +8,135 @@
     General
 \*------------------------------------*/
 * {
-  box-sizing: border-box;
-  transform: $delay;
+	box-sizing: border-box;
+	transform: $delay;
 }
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 /* =10px */
 body {
-  font-size: 1.4rem;
-  background-color: $color-900;
+	font-size: 1.4rem;
+	background-color: #222426;
+	overflow: hidden;
 }
 
 /* =14px */
 h1 {
-  font-size: 2.4rem;
+	font-size: 2.4rem;
 }
 
 /* =24px */
 /*------------------------------------*\
     Pre-loader
 \*------------------------------------*/
-#pre-loader {
-  width: 100vw;
-  height: 100vh;
-  padding: calculateRem(50px);
-  // position: absolute;
-  z-index: 1000;
-  background-color: #fcaf45;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  overflow: hidden;
-  // display: none;
+#pre-loader-container {
+	width: 100vw;
+	height: 100vh;
+	padding: calculateRem(50px);
+	// position: absolute;
+	z-index: 1000;
+	background-color: #fcaf45;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	overflow: hidden;
+	// display: none;
 }
 
 #pre-loader-logo {
-  z-index: 100;
-  fill: white;
-  // stroke:red; 
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  // opacity:0;  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  // width: 100%;
-  height: 90%;
+	z-index: 100;
+	fill: white;
+	// stroke:red; 
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	// opacity:0;  
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	// width: 100%;
+	height: 100%;
+}
+
+// #pre-loader {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position:absolute;
+//   top:40px;
+//   left:40px;
+//   width:160px;
+//   height:230px;
+//   z-index:1;
+//   overflow: hidden;
+
+// }
+
+.preloader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	// width: 160px;
+	// height: 230px;
+	// padding: calculateRem(50px);
+	z-index: 1000;
+	background-color: #fcaf45;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	height: 30%;
+	border-bottom: 5px solid white;
+	opacity: 0;
+}
+
+.content {
+	position: absolute;
+	padding-bottom: 1px;
+	// margin-bottom: calculateRem(50px);
+	box-sizing: border-box;
+	width: 100%;
+	height: 0;
+	bottom: 0;
+	overflow: hidden;
 }
 
 /*------------------------------------*\
     Logo
 \*------------------------------------*/
 #logo-container {
-  z-index: 100;
-  width: calculateRem(85px);
-  height: calculateRem(85px);
-  position: fixed;
-  top: calculateRem(50px);
-  left: calculateRem(50px);
+	z-index: 100;
+	width: calculateRem(85px);
+	height: calculateRem(85px);
+	position: fixed;
+	top: calculateRem(50px);
+	left: calculateRem(50px);
 }
 
 #logo {
-  z-index: 100;
-  fill: white;
-  width: 100%;
-  transition-duration: 2s;
-  transition-timing-function: linear;
-  &:hover {
-    transition-duration: 60s;
-    transform: rotate(360000deg) scale(1.1);
-  }
+	z-index: 100;
+	fill: white;
+	width: 100%;
+	transition-duration: 2s;
+	transition-timing-function: linear;
+
+	&:hover {
+		transition-duration: 60s;
+		transform: rotate(360000deg) scale(1.1);
+	}
 }
 
 /*------------------------------------*\
@@ -91,103 +144,103 @@ h1 {
 \*------------------------------------*/
 
 main {
-  display: flex;
-  flex-wrap: nowrap;
-  // overflow-x: auto;
-  overflow: scroll;
+	display: flex;
+	flex-wrap: nowrap;
+	// overflow-x: auto;
+	overflow: scroll;
 }
 
 .page {
-  min-height: calc(100vh - #{calculateRem(0px)});
-  max-height: 100vh;
-  width: calc(100vw - #{calculateRem(0px)});
-  padding: calculateRem(50px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 0 0 auto;
-  position: relative;
-  background-color: $color-900;
+	min-height: calc(100vh - #{calculateRem(0px)});
+	max-height: 100vh;
+	width: calc(100vw - #{calculateRem(0px)});
+	padding: calculateRem(50px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 0 0 auto;
+	position: relative;
+	background-color: $color-900;
 
-  &:nth-child(odd) {
-    background-color: $color-700;
-  }
+	&:nth-child(odd) {
+		background-color: $color-700;
+	}
 
-  @include breakpoint(x-small) {
-    padding: calculateRem(60px);
-  }
+	@include breakpoint(x-small) {
+		padding: calculateRem(60px);
+	}
 
-  @include breakpoint(small) {
-    padding: calculateRem(70px);
-  }
+	@include breakpoint(small) {
+		padding: calculateRem(70px);
+	}
 
-  @include breakpoint(medium) {
-    padding: calculateRem(170px);
-  }
+	@include breakpoint(medium) {
+		padding: calculateRem(170px);
+	}
 }
 
 /*------------------------------------*\
     Text-block
 \*------------------------------------*/
 .text-block {
-  // position: absolute;
-  text-align: left;
-  max-width: 80%;
-  position: relative;
+	// position: absolute;
+	text-align: left;
+	max-width: 80%;
+	position: relative;
 
-  @include breakpoint(x-small) {
-    max-width: 70%;
-  }
+	@include breakpoint(x-small) {
+		max-width: 70%;
+	}
 
-  @include breakpoint(small) {
-    max-width: 59%;
-  }
+	@include breakpoint(small) {
+		max-width: 59%;
+	}
 
-  @include breakpoint(medium) {
-    max-width: 55%;
-  }
+	@include breakpoint(medium) {
+		max-width: 55%;
+	}
 
-  @include breakpoint(large) {
-    max-width: 45%;
-  }
+	@include breakpoint(large) {
+		max-width: 45%;
+	}
 
-  .text-container {
-    overflow: hidden;
-    height: auto;
+	.text-container {
+		overflow: hidden;
+		height: auto;
 
-    .knockout-text {
-      text-align: left;
-      line-height: .9;
-      letter-spacing: 1px;
-      color: transparent;
-      font-weight: 900;
-      -webkit-text-stroke: 1px white;
-      font-family: 'Playfair Display', serif;      
-    }
+		.knockout-text {
+			text-align: left;
+			line-height: .9;
+			letter-spacing: 1px;
+			color: transparent;
+			font-weight: 900;
+			-webkit-text-stroke: 1px white;
+			font-family: 'Playfair Display', serif;
+		}
 
-    .subline-text {
-      text-align: left;      
-      font-weight: 600;
-      text-transform: uppercase;
-      // margin:#{calculateRem(-20px)} 0 0 0;
-      margin: 0;      
-    }
+		.subline-text {
+			text-align: left;
+			font-weight: 600;
+			text-transform: uppercase;
+			// margin:#{calculateRem(-20px)} 0 0 0;
+			margin: 0;
+		}
 
-    .aside-text {
-      text-align: left;
-      text-transform: uppercase;
-      margin: 0;      
-    }
+		.aside-text {
+			text-align: left;
+			text-transform: uppercase;
+			margin: 0;
+		}
 
-    &--aside {
-      position: absolute;
-      // left:calculateRem(-10px);
-      bottom: calculateRem(5px);
-      transform: rotate(-90deg);
-      transform-origin: bottom left;
-      // height: 50px;
-    }
-  }
+		&--aside {
+			position: absolute;
+			// left:calculateRem(-10px);
+			bottom: calculateRem(5px);
+			transform: rotate(-90deg);
+			transform-origin: bottom left;
+			// height: 50px;
+		}
+	}
 
 }
 
@@ -195,176 +248,188 @@ main {
     vertical-overflow-slider
 \*------------------------------------*/
 .vertical-overflow-slider {
-  max-width: 30%;
-  display: flex;
-  right: 5%;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  max-height: 100vh;
-  overflow: hidden;
-  justify-content: space-between;
+	max-width: 30%;
+	display: flex;
+	right: 5%;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	max-height: 100vh;
+	overflow: hidden;
+	justify-content: space-between;
 
-  .vertical-overflow-slider-column {
-    display: flex;
-    flex-direction: column;
+	.vertical-overflow-slider-column {
+		display: flex;
+		flex-direction: column;
 
-    &:nth-child(even) {
-      margin-top: calculateRem(100px);
-    }
-  }
+		&:nth-child(even) {
+			margin-top: calculateRem(100px);
+		}
+	}
 
-  .iphones {
-    max-width: 80%;
+	.iphones {
+		max-width: 80%;
 
-    img {
-      max-width: 100%;
-      width: 100%;
-      margin-bottom: calculateRem(70px);
-    }
-  }
+		img {
+			max-width: 100%;
+			width: 100%;
+			margin-bottom: calculateRem(70px);
+		}
+	}
 }
 
 /*------------------------------------*\
     Home page
 \*------------------------------------*/
 #home {
-  background-color: #222426;
-  position: fixed;
-  z-index: -2;
+	background-color: #222426;
+	position: fixed;
+	z-index: -2;
 
-  .text-block {
-    // position: absolute;
-    text-align: left;
-    max-width: 80%;
-    position: relative;
+	.text-block {
+		// position: absolute;
+		text-align: left;
+		max-width: 80%;
+		position: relative;
 
-    @include breakpoint(x-small) {
-      max-width: 70%;
-    }
+		@include breakpoint(x-small) {
+			max-width: 70%;
+		}
 
-    @include breakpoint(small) {
-      max-width: 59%;
-    }
+		@include breakpoint(small) {
+			max-width: 59%;
+		}
 
-    @include breakpoint(medium) {
-      max-width: 55%;
-    }
+		@include breakpoint(medium) {
+			max-width: 55%;
+		}
 
-    @include breakpoint(large) {
-      max-width: 45%;
-    }
-  }
+		@include breakpoint(large) {
+			max-width: 45%;
+		}
+	}
 }
 
 /*------------------------------------*\
     About page
 \*------------------------------------*/
 #about {
-  background-color: #d4a39f;
-  margin-left: 100vw;
+	background-color: #d4a39f;
+	margin-left: 100vw;
 }
 
 /*------------------------------------*\
     Values page
 \*------------------------------------*/
 #values {
-  background-color: #1cb3aa;
-  width: calc(340vw - #{calculateRem(0px)});
-  @include breakpoint(x-small) {
-    width: calc(300vw - #{calculateRem(0px)});
-  }
-  @include breakpoint(small) {
-    width: calc(250vw - #{calculateRem(0px)});
-  }
-  @include breakpoint(medium) {
-    width: calc(220vw - #{calculateRem(0px)});
-  }
-  @include breakpoint(large) {
-    width: calc(150vw - #{calculateRem(0px)});
-  }
+	background-color: #1cb3aa;
+	width: calc(340vw - #{calculateRem(0px)});
 
-  .value-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    flex: 0 0 auto;
-    width: 100%;
+	@include breakpoint(x-small) {
+		width: calc(300vw - #{calculateRem(0px)});
+	}
 
-    .text-block {
-      width: 80vw;
-      @include breakpoint(x-small) {
-        width: 75vw;
-      }
-      @include breakpoint(small) {
-        width: 80%;
-      }
-      @include breakpoint(medium) {
-        width: 80%;
-      }
-      @include breakpoint(large) {
-        width: 40%;
-      }
-    }
+	@include breakpoint(small) {
+		width: calc(250vw - #{calculateRem(0px)});
+	}
 
-    #logo-overlay-cont {
-      position: relative;
-      width: 200vw;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0 auto;
-      background-image: url('https://placeimg.com/640/480/any');
-      background-size: cover;
-      @include breakpoint(x-small) {
-        width: 160vw;
-      }
-      @include breakpoint(small) {
-        width: 125vw;
-      }
-      @include breakpoint(medium) {
-        width: 100vw;
-      }
-      @include breakpoint(large) {
-        width: 80vw;
-      }
+	@include breakpoint(medium) {
+		width: calc(220vw - #{calculateRem(0px)});
+	}
 
-      #logo-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 146%;
-      }
+	@include breakpoint(large) {
+		width: calc(150vw - #{calculateRem(0px)});
+	}
 
-      #image-underlay {
-        position: absolute;
-        height: 100vh;
-      }
+	.value-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		flex: 0 0 auto;
+		width: 100%;
 
-    }
+		.text-block {
+			width: 80vw;
 
-    .left {
-      left: 15%;
+			@include breakpoint(x-small) {
+				width: 75vw;
+			}
 
-      @include breakpoint(x-small) {
-        left: 20%;
-      }
+			@include breakpoint(small) {
+				width: 80%;
+			}
 
-      @include breakpoint(small) {
-        left: 25%;
-      }
+			@include breakpoint(medium) {
+				width: 80%;
+			}
 
-      @include breakpoint(medium) {
-        left: 10%;
-      }
+			@include breakpoint(large) {
+				width: 40%;
+			}
+		}
 
-      @include breakpoint(large) {
-        left: 10%;
-      }
-    }
-  }
+		#logo-overlay-cont {
+			position: relative;
+			width: 200vw;
+			height: 100vh;
+			overflow: hidden;
+			margin: 0 auto;
+			background-image: url('https://placeimg.com/640/480/any');
+			background-size: cover;
+
+			@include breakpoint(x-small) {
+				width: 160vw;
+			}
+
+			@include breakpoint(small) {
+				width: 125vw;
+			}
+
+			@include breakpoint(medium) {
+				width: 100vw;
+			}
+
+			@include breakpoint(large) {
+				width: 80vw;
+			}
+
+			#logo-overlay {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 146%;
+			}
+
+			#image-underlay {
+				position: absolute;
+				height: 100vh;
+			}
+
+		}
+
+		.left {
+			left: 15%;
+
+			@include breakpoint(x-small) {
+				left: 20%;
+			}
+
+			@include breakpoint(small) {
+				left: 25%;
+			}
+
+			@include breakpoint(medium) {
+				left: 10%;
+			}
+
+			@include breakpoint(large) {
+				left: 10%;
+			}
+		}
+	}
 }
 
 /*------------------------------------*\
@@ -372,37 +437,37 @@ main {
 \*------------------------------------*/
 
 #contact {
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  background-color: #1573bb;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	background-color: #1573bb;
 
-  .text-block {
-    position: static;
+	.text-block {
+		position: static;
 
-    @include breakpoint(large) {
-      max-width: 70%;
-      left: 10%;
-    }
+		@include breakpoint(large) {
+			max-width: 70%;
+			left: 10%;
+		}
 
-    .subline-text {
-      text-align: left;
-      font-weight: 600;
-      text-transform: uppercase;
-      line-height: 1;
-      // margin:#{calculateRem(-20px)} 0 0 0;
-      margin: calculateRem(0px) 0 0 0;
-    }
+		.subline-text {
+			text-align: left;
+			font-weight: 600;
+			text-transform: uppercase;
+			line-height: 1;
+			// margin:#{calculateRem(-20px)} 0 0 0;
+			margin: calculateRem(0px) 0 0 0;
+		}
 
-    p {
-      text-align: left;
-      line-height: 1.4;
-      font-weight: normal;
-      font-size: calculateRem(25px);
+		p {
+			text-align: left;
+			line-height: 1.4;
+			font-weight: normal;
+			font-size: calculateRem(25px);
 
-      b {
-        font-weight: 900;
-      }
-    }
-  }
+			b {
+				font-weight: 900;
+			}
+		}
+	}
 }

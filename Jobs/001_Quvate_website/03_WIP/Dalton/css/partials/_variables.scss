@@ -53,6 +53,7 @@ $fontSize : 3.4rem;
 
 @mixin general_text_style {
   color: $light;
+  font-size: calculateRem(16px);
   line-height: 1.2;
   // font-family: 'Roboto', serif;
   font-family: 'Playfair Display', serif;
