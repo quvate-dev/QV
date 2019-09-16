@@ -72,7 +72,6 @@
 
       setInterval(() => {
         count == 0 ? count = +1 : count = 0;
-    
         textSwap("home", "knockout-text", count);
         textSwap("home", "subline-text", count);
         textSwap("home", "aside-text", count);
@@ -201,7 +200,7 @@ function quvateAnimation(){
     preloaderTl.delay(1)
     preloaderTl.to(".content", 1.1, {height:"0", ease:Expo.easeOut});
     preloaderTl.to("#pre-loader-logo", 1, { y: "100px", ease:Expo.easeOut}, "-=1");
-    preloaderTl.to(".preloader", 1, {width: "0", ease: Expo.easeOut}, "-=" + 0.5);
+    preloaderTl.to(".preloader", 1, {width: "0", ease: Expo.easeOut}, "-=" + 0.75);
     preloaderTl.to(["#pre-loader-container"], 0.5, { autoAlpha: 0, ease: Linear.easeNone }, "+=0.5");
     preloaderTl.set(["#pre-loader-container"], { display: "none" });
     preloaderTl.set(["body"], { overflow: "auto" });

@@ -112,7 +112,7 @@ a:hover {
 .big-text {
   overflow: hidden;
   font-size: 3.75rem;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 @media (min-width: 25rem) {
@@ -427,7 +427,8 @@ main {
 
 .text-block .text-container .knockout-text {
   text-align: left;
-  line-height: .9;
+  padding-bottom: 0.75rem;
+  line-height: 1;
   letter-spacing: 1px;
   color: transparent;
   font-weight: 900;

@@ -210,7 +210,8 @@ main {
 
 		.knockout-text {
 			text-align: left;
-			line-height: .9;
+			padding-bottom: calculateRem(12px);
+			line-height: 1;
 			letter-spacing: 1px;
 			color: transparent;
 			font-weight: 900;
