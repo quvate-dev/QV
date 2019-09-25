@@ -3,8 +3,13 @@
 \*------------------------------------*/
 h1 {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  // font-family: 'Playfair Display', serif;
   line-height: 1;
+}
+
+sub,
+sup {
+  font-family: Circular,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
 p,
 a,
@@ -45,56 +50,64 @@ li {
   overflow: hidden;
   // animation: shift 2.5s ease-in-out infinite alternate;
   //TODO trigger this animation with the text change
-  font-size: calculateRem(60px);
+  font-size: calculateRem(30px);
   line-height: 1;
   @include breakpoint(x-small) {
-    font-size: calculateRem(90px);
+    font-size: calculateRem(35px);
   }
 
   @include breakpoint(small) {
-    font-size: calculateRem(100px);
+    font-size: calculateRem(38px);
   }
 
   @include breakpoint(medium) {
-    font-size: calculateRem(120px);
+    font-size: calculateRem(40px);
   }
 
   @include breakpoint(large) {
-    font-size: calculateRem(140px);
+    font-size: calculateRem(45px);
   }
 
   @include breakpoint(x-large) {
-    font-size: calculateRem(160px);
+    font-size: calculateRem(55px);
   }
 }
 .med-text {
   overflow: hidden;
   // animation: shift 3s ease-in-out infinite alternate;
-  font-size: calculateRem(35px);
+  font-size: calculateRem(20px);
   @include breakpoint(x-small) {
-    font-size: calculateRem(40px);
+    font-size: calculateRem(25px);
   }
 
   @include breakpoint(small) {
-    font-size: calculateRem(50px);
+    font-size: calculateRem(28px);
+  }
+
+  @include breakpoint(large) {
+    font-size: calculateRem(35px);
   }
 
   @include breakpoint(x-large) {
-    font-size: calculateRem(70px);
+    font-size: calculateRem(40px);
   }
 }
 .small-text {
-  font-size: calculateRem(20px);
-  @include breakpoint(x-small) {
-    font-size: calculateRem(26px);
-  }
+  font-size: calculateRem(11px);
+  // @include breakpoint(x-small) {
+  //   font-size: calculateRem(13px);
+  // }
 
   @include breakpoint(small) {
-    font-size: calculateRem(32px);
+    font-size: calculateRem(13px);
+  }
+
+  @include breakpoint(large) {
+    font-size: calculateRem(15px);
   }
 
   @include breakpoint(x-large) {
-    font-size: calculateRem(36px);
+    font-size: calculateRem(18px);
   }
 }
 
