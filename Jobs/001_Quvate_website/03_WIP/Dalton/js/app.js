@@ -8,7 +8,8 @@ $(window).on('load', function(){
   ).done(function(){
 
     //place your code here, the scripts are all loaded
-    preLoader()
+    // preLoader()
+    textBlockAnimation();
     iphoneAnimation();
     
 

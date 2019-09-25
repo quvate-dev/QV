@@ -9,18 +9,26 @@
 \*------------------------------------*/
 * {
 	box-sizing: border-box;
-	transform: $delay;
 }
 
 html {
 	font-size: 62.5%;
+	touch-action: none;
+	width: 100%;
+  position: fixed;
+  overflow: hidden;
 }
 
-/* =10px */
 body {
+	overscroll-behavior-x: none;
+	touch-action: none;
+	display: flex;
+	flex-wrap: nowrap;
+	// overflow-x: auto;
+	overflow: scroll;
 	font-size: 1.4rem;
 	background-color: #222426;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 /* =14px */
@@ -61,6 +69,7 @@ h1 {
 	z-index: 1000;
 	// width: 100%;
 	height: 100%;
+	padding-left: 10px;
 }
 
 // #pre-loader {
@@ -74,7 +83,6 @@ h1 {
 //   height:230px;
 //   z-index:1;
 //   overflow: hidden;
-
 // }
 
 .preloader {
@@ -82,15 +90,12 @@ h1 {
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	// width: 160px;
-	// height: 230px;
-	// padding: calculateRem(50px);
 	z-index: 1000;
 	background-color: #fcaf45;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	width: 80%;
+	width: 150px;
 	height: 100%;
 	margin: 0 auto;
 	position: absolute;
@@ -115,42 +120,142 @@ h1 {
 }
 
 /*------------------------------------*\
+    Menu
+\*------------------------------------*/
+#nav {
+	z-index: 100;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	top: calculateRem(50px);
+	right: calculateRem(50px);
+	
+
+	#nav-icon {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255,255,255,1);
+		border-radius: 100%;
+		position: relative;
+		cursor: pointer;
+		transition-duration: 0.2s;
+		border: 2px solid white;
+		box-sizing: content-box;
+
+		&:hover {
+			border: 2px solid #dab056;
+		}
+
+		#line-one {
+			position: absolute;
+			left: 0px;
+			top: 28px;
+			right: 0px;
+			z-index: 2;
+			display: block;
+			width: 30px;
+			height: 4px;
+			margin-right: auto;
+			margin-left: auto;
+			border-radius: 10px;
+			background-color: #cea142;
+		}
+		#line-two {
+			position: absolute;
+			left: 0px;
+			top: 15px;
+			right: 0px;
+			z-index: 2;
+			display: block;
+			width: 4px;
+			height: 30px;
+			margin-right: auto;
+			margin-left: auto;
+			border-radius: 10px;
+			background-color: #cea142;
+		}
+	}
+}
+
+#nav-items {
+	background-color: #fff;
+	min-height: calc(100vh - #{calculateRem(0px)});
+	max-height: 100vh;
+	// width: calc(100vw - #{calculateRem(0px)});
+	width: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 0 0 auto;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 99;
+
+	ul {
+		list-style-type: none;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		padding-inline-start: 0;
+		display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+
+		li {
+			display: block;			
+
+			a {
+				text-align: center;
+				color: black;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: line-through;
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------------*\
     Logo
 \*------------------------------------*/
 #logo-container {
 	z-index: 100;
 	width: calculateRem(85px);
-	height: calculateRem(85px);
+	height: calculateRem(110px);
 	position: fixed;
 	top: calculateRem(50px);
-	left: calculateRem(50px);
+	left: calculateRem(50px);	
+	overflow: hidden;
+
+	.logo-underline {
+		margin: 0 auto;
+		height: 5px;
+		background-color: #fff;
+		border: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+    width: 0;
+	}
 }
 
 #logo {
 	z-index: 100;
 	fill: white;
 	width: 100%;
-	transition-duration: 2s;
-	transition-timing-function: linear;
-
-	&:hover {
-		transition-duration: 60s;
-		transform: rotate(360000deg) scale(1.1);
-	}
+	position: absolute;
+	bottom: -50px;
 }
 
 /*------------------------------------*\
     Pages
 \*------------------------------------*/
 
-main {
-	display: flex;
-	flex-wrap: nowrap;
-	// overflow-x: auto;
-	overflow: scroll;
-}
-
-.page {
+section {
 	min-height: calc(100vh - #{calculateRem(0px)});
 	max-height: 100vh;
 	width: calc(100vw - #{calculateRem(0px)});
@@ -160,11 +265,11 @@ main {
 	justify-content: center;
 	flex: 0 0 auto;
 	position: relative;
-	background-color: $color-900;
+	// background-color: $color-900;
 
-	&:nth-child(odd) {
-		background-color: $color-700;
-	}
+	// &:nth-child(odd) {
+	// 	background-color: $color-700;
+	// }
 
 	@include breakpoint(x-small) {
 		padding: calculateRem(60px);
@@ -217,6 +322,7 @@ main {
 			font-weight: 900;
 			-webkit-text-stroke: 1px white;
 			font-family: 'Playfair Display', serif;
+			transform: matrix(1, 0, 0, 1, 0, 500);
 		}
 
 		.subline-text {
@@ -225,12 +331,14 @@ main {
 			text-transform: uppercase;
 			// margin:#{calculateRem(-20px)} 0 0 0;
 			margin: 0;
+			transform: matrix(1, 0, 0, 1, 0, 500);
 		}
 
 		.aside-text {
 			text-align: left;
 			text-transform: uppercase;
 			margin: 0;
+			transform: matrix(1, 0, 0, 1, 0, 50);
 		}
 
 		&--aside {
@@ -284,7 +392,7 @@ main {
 \*------------------------------------*/
 #home {
 	background-color: #222426;
-	position: fixed;
+	// position: fixed;
 	z-index: -2;
 
 	.text-block {
@@ -316,13 +424,13 @@ main {
 \*------------------------------------*/
 #about {
 	background-color: #d4a39f;
-	margin-left: 100vw;
+	// margin-left: 100vw;
 }
 
 /*------------------------------------*\
     Values page
 \*------------------------------------*/
-#values {
+#projects {
 	background-color: #1cb3aa;
 	width: calc(340vw - #{calculateRem(0px)});
 
