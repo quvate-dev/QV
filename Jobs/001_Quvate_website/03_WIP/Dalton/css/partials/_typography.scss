@@ -93,21 +93,21 @@ li {
   }
 }
 .small-text {
-  font-size: calculateRem(11px);
+  font-size: calculateRem(10px);
   // @include breakpoint(x-small) {
   //   font-size: calculateRem(13px);
   // }
 
   @include breakpoint(small) {
-    font-size: calculateRem(13px);
+    font-size: calculateRem(11px);
   }
 
   @include breakpoint(large) {
-    font-size: calculateRem(15px);
+    font-size: calculateRem(13px);
   }
 
   @include breakpoint(x-large) {
-    font-size: calculateRem(18px);
+    font-size: calculateRem(15px);
   }
 }
 

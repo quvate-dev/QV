@@ -176,24 +176,24 @@ li {
 }
 
 .small-text {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
 }
 
 @media (min-width: 37.5rem) {
   .small-text {
-    font-size: 0.8125rem;
+    font-size: 0.6875rem;
   }
 }
 
 @media (min-width: 64.375rem) {
   .small-text {
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
   }
 }
 
 @media (min-width: 85rem) {
   .small-text {
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
   }
 }
 
@@ -677,7 +677,6 @@ section {
 
 .text-block .text-container .knockout-text {
   text-align: left;
-  padding-bottom: 0.75rem;
   line-height: 1;
   letter-spacing: 1px;
   text-transform: uppercase;
