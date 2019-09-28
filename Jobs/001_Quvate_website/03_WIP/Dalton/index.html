@@ -7,9 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:100,200,300,400,700,900|Roboto:100,200,300,400,700,900&display=swap"
     rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css"> 
   <title>Quvate</title>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
   <script src="js/vanta/vendor/jquery.js"></script>
   <!-- <script src="js/transition.js"></script> -->
@@ -165,6 +167,12 @@
       </div>
     </section>
 
+    <section id="window" class="page">
+      <video id="video" playsinline autoplay muted="muted" loop="loop">
+        <source src="img/the-office.mp4" type="video/mp4">
+      </video>
+    </section>
+
     <section id="projects" class="projects">
       
       <div class="value-container" id="value-container">
@@ -264,7 +272,8 @@
     </section>
 
     <section id="image" class="page">
-      <img data-v-6f0700eb="" src="https://studiolovelock.com/wp-content/uploads/2019/02/EchoHero_Image_StudioLovelock.jpg" class="image-item">
+      <!-- <img data-v-6f0700eb="" src="https://studiolovelock.com/wp-content/uploads/2019/02/EchoHero_Image_StudioLovelock.jpg" class="image-item"> -->
+      <div id='map'></div>
     </section>
 
     <section id="contact" class="contact">

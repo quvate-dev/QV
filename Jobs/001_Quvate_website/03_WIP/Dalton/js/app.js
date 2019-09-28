@@ -5,6 +5,7 @@ $(window).on('load', function(){
     $.getScript( "js/menu.js" ),
     $.getScript( "js/transition.js" ),
     $.getScript( "js/zoom.js" ),
+    $.getScript( "js/map.js" ),
     // $.getScript( "js/scroll.js" ),
     $.Deferred(function( deferred ){
         $( deferred.resolve );

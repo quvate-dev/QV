@@ -118,13 +118,13 @@ li {
 
 @media (min-width: 25rem) {
   .big-text {
-    font-size: 2.1875rem;
+    font-size: 2.0625rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .big-text {
-    font-size: 2.375rem;
+    font-size: 2.1875rem;
   }
 }
 
@@ -153,19 +153,19 @@ li {
 
 @media (min-width: 25rem) {
   .med-text {
-    font-size: 1.5625rem;
+    font-size: 1.375rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .med-text {
-    font-size: 1.75rem;
+    font-size: 1.5625rem;
   }
 }
 
 @media (min-width: 64.375rem) {
   .med-text {
-    font-size: 2.1875rem;
+    font-size: 2.0625rem;
   }
 }
 
@@ -244,6 +244,16 @@ img.zoom-img {
 .zoom-overlay-open,
 .zoom-overlay-transitioning {
   cursor: default;
+}
+
+#map {
+  width: 100vh;
+  height: 100vh;
+}
+
+.mapboxgl-control-container {
+  opacity: 0;
+  display: none;
 }
 
 /*------------------------------------*\
@@ -831,6 +841,54 @@ section {
   background-color: #d4a39f;
 }
 
+#about .text-block {
+  max-width: 60%;
+}
+
+@media (min-width: 25rem) {
+  #about .text-block {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  #about .text-block {
+    max-width: 60%;
+  }
+}
+
+/*------------------------------------*\
+    Window section
+\*------------------------------------*/
+#video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  /* object-fit: cover; */
+  /* position: fixed; */
+  left: 0px;
+  top: 0px;
+}
+
+#window {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  width: 100vh;
+  min-width: 500px;
+  background-color: #1cb3aa;
+}
+
 /*------------------------------------*\
     Image
 \*------------------------------------*/
@@ -855,12 +913,13 @@ section {
 \*------------------------------------*/
 #projects {
   background-color: #1cb3aa;
-  width: calc(300vw - 0rem);
+  width: calc(450vw - 0rem);
 }
 
 @media (min-width: 25rem) {
   #projects {
-    width: calc(275vw - 0rem);
+    width: calc(300vw - 0rem);
+    min-width: 93.75rem;
   }
 }
 
@@ -878,7 +937,7 @@ section {
 
 @media (min-width: 64.375rem) {
   #projects {
-    width: calc(140vw - 0rem);
+    width: calc(150vw - 0rem);
   }
 }
 
@@ -903,13 +962,7 @@ section {
 }
 
 #projects .value-container .text-block {
-  width: 80vw;
-}
-
-@media (min-width: 25rem) {
-  #projects .value-container .text-block {
-    width: 75vw;
-  }
+  min-width: 13.75rem;
 }
 
 @media (min-width: 37.5rem) {

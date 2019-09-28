@@ -127,6 +127,25 @@ var body = document.querySelector("body");
     valuesTl.from("#square2", 4, {height: 0,ease: defaultEase}, "+=3");
     valuesTl.from("#square3", 4, {height: 0,ease: defaultEase}, "+=3");
 
+    var videoTl = new TimelineMax();
+    var videoEl = document.getElementById('video');
+    var dur = 10;
+    var defaultEase = Linear.easeNone;
+
+    new ScrollMagic.Scene({
+      duration:1000,
+      reverse: true,
+      triggerElement: videoEl,
+      triggerHook: 'onEnter',
+      offset: 200,
+      pushfollowers: false
+    })
+
+    .setTween(videoTl)
+    // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+    .addTo(ctrl);
+    videoTl.from(["#video"],10, {width: 0,ease: defaultEase}, "+=0");
+
     var sections = document.getElementsByTagName("section");
     var sectionsArray = Array.from(sections);
 
@@ -138,7 +157,7 @@ var body = document.querySelector("body");
       // Break out of function if no element found
       if (!knockOutText || !sublineText) return;
 
-      var tl = new TimelineMax();
+      var tl = new TimelineMax({  });
 
       tl.to(knockOutText, 0.5, {y: 0});
       if (asideText) {
@@ -168,7 +187,7 @@ var body = document.querySelector("body");
 
       new ScrollMagic.Scene({
         triggerElement: element,
-        triggerHook: 0.4
+        triggerHook: 0.5
       })
       .setTween(tl)
       .addIndicators({
@@ -223,17 +242,22 @@ var body = document.querySelector("body");
   }
 
   function logoAnimation() {
-    var logoTL = new TimelineMax();
+    var logoTL = new TimelineMax({
+      onComplete: function () {
+        scrollMagic()
+        menuAnimation();        
+      }
+    });
     logoTL.to("#logo", 0, {y: "80px"});
-    logoTL.to(".logo-underline", 0.25, {width: "100%"}, "+=0.25");
-    logoTL.to("#logo", 0.25, {opacity: "1"}, "+=0.25");
+    logoTL.to(".logo-underline", 0.25, {width: "100%"});
+    logoTL.to("#logo", 0.25, {opacity: "1"});
     logoTL.to("#logo", 0.25, {y: "0"}, "+=0.5");
     logoTL.to(".logo-underline", 0.25, {width: "0%"});
   }
 
   function menuAnimation() {
     var menuTL = new TimelineMax();
-    menuTL.to("#nav", 1, {opacity: "1"}, "+=1.5");
+    menuTL.to("#nav", 1, {opacity: "1"}, "+=2");
   }
 
   function quvateAnimation() {
@@ -256,10 +280,8 @@ var body = document.querySelector("body");
 
     var end_anim = function () {
       var preloaderTl = new TimelineMax({
-        onComplete: function () {
-          scrollMagic()
-          logoAnimation();
-          menuAnimation();
+        onComplete: function () {          
+          logoAnimation();          
         }
         // onComplete: scrollMagic
       });

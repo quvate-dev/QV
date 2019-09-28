@@ -53,11 +53,11 @@ li {
   font-size: calculateRem(30px);
   line-height: 1;
   @include breakpoint(x-small) {
-    font-size: calculateRem(35px);
+    font-size: calculateRem(33px);
   }
 
   @include breakpoint(small) {
-    font-size: calculateRem(38px);
+    font-size: calculateRem(35px);
   }
 
   @include breakpoint(medium) {
@@ -77,15 +77,15 @@ li {
   // animation: shift 3s ease-in-out infinite alternate;
   font-size: calculateRem(20px);
   @include breakpoint(x-small) {
-    font-size: calculateRem(25px);
+    font-size: calculateRem(22px);
   }
 
   @include breakpoint(small) {
-    font-size: calculateRem(28px);
+    font-size: calculateRem(25px);
   }
 
   @include breakpoint(large) {
-    font-size: calculateRem(35px);
+    font-size: calculateRem(33px);
   }
 
   @include breakpoint(x-large) {

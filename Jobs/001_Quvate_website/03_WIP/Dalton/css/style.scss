@@ -4,6 +4,7 @@
 @import 'partials/variables';
 @import 'partials/typography';
 @import 'partials/zoom';
+@import 'partials/map';
 
 /*------------------------------------*\
     General
@@ -533,6 +534,51 @@ section {
 #about {
 	background-color: #d4a39f;
 	// margin-left: 100vw;
+
+	.text-block {
+		max-width: 60%;
+
+		@include breakpoint(x-small) {
+			max-width: 60%;
+		}
+
+		@include breakpoint(small) {
+			max-width: 60%;
+		}	
+	}
+}
+
+/*------------------------------------*\
+    Window section
+\*------------------------------------*/
+
+
+#video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  /* object-fit: cover; */
+  /* position: fixed; */
+  left: 0px;
+  top: 0px;
+}
+
+#window {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  padding:0;
+	width: 100vh;
+	min-width: 500px;
+	background-color: #1cb3aa;
 }
 
 /*------------------------------------*\
@@ -560,10 +606,11 @@ section {
 \*------------------------------------*/
 #projects {
 	background-color: #1cb3aa;
-	width: calc(300vw - #{calculateRem(0px)});
+	width: calc(450vw - #{calculateRem(0px)});
 
 	@include breakpoint(x-small) {
-		width: calc(275vw - #{calculateRem(0px)});
+		width: calc(300vw - #{calculateRem(0px)});
+		min-width: calculateRem(1500px);
 	}
 
 	@include breakpoint(small) {
@@ -575,7 +622,7 @@ section {
 	}
 
 	@include breakpoint(large) {
-		width: calc(140vw - #{calculateRem(0px)});
+		width: calc(150vw - #{calculateRem(0px)});
 	}
 
 	.value-container {
@@ -589,11 +636,7 @@ section {
 		padding: 0 calculateRem(100px);
 
 		.text-block {
-			width: 80vw;
-
-			@include breakpoint(x-small) {
-				width: 75vw;
-			}
+			min-width: calculateRem(220px);
 
 			@include breakpoint(small) {
 				width: 80%;
