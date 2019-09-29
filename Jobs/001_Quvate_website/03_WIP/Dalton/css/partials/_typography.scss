@@ -64,12 +64,8 @@ li {
     font-size: calculateRem(40px);
   }
 
-  @include breakpoint(large) {
-    font-size: calculateRem(45px);
-  }
-
   @include breakpoint(x-large) {
-    font-size: calculateRem(55px);
+    font-size: calculateRem(45px);
   }
 }
 .med-text {

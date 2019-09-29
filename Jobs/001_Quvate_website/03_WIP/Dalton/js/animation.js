@@ -7,57 +7,57 @@ var body = document.querySelector("body");
     "home": {
       "knockout-text": {
         0: "We are a",
-        1: "Lorem ips",
+        1: "We design, build and ",
       },
       "subline-text": {
         0: "Marketing agency for brands that want more",
-        1: "Lorem ipsum dolor sit amet consecte elit",
+        1: "operate solutions and digital strategies and together we can bring your ideas to life.",
       },
       "aside-text": {
         0: "Who are we",
-        1: "Lorem ipsu",
+        1: "What we do",
       }
     },
     "about": {
       "knockout-text": {
         0: "We're sweet at",
-        1: "We love making",
+        1: "Strong campaigns that",
       },
       "subline-text": {
         0: "Beautiful digital ads, emails & landing pages",
-        1: "Lorem ipsum dolor sit amet consecte elit",
+        1: "work & look great across all platforms including mobile devices.",
       },
       "aside-text": {
-        0: "Innovation",
-        1: "Creativity",
+        0: "What we do",
+        1: "What we do",
       }
     },
     "projects": {
       "knockout-text": {
-        0: "interested in us?",
-        1: "text-two",
+        0: "We specialise in",
+        1: "Our values are both",
       },
       "subline-text": {
-        0: "Lets work together",
-        1: "text-two",
+        0: "Beautiful digital ads, emails & landing pages",
+        1: "our identity and our promise defining and motivating our every interaction with you",
       },
       "aside-text": {
-        0: "Innovation",
+        0: "What we do",
         1: "Creativity",
       }
     },
     "contact": {
       "knockout-text": {
-        0: "interested in us?",
-        1: "text-two",
+        0: "Lets get a coffee",
+        1: "GET IN TOUCH",
       },
       "subline-text": {
-        0: "Lets work together",
-        1: "text-two",
+        0: "Or if you'd prefer",
+        1: "WE WOULD LOVE TO HEAR ABOUT YOUR PROJECT!",
       },
       "aside-text": {
-        0: "Innovation",
-        1: "Creativity",
+        0: "Conact us",
+        1: "Contact Us",
       }
     }
   }
@@ -104,7 +104,11 @@ var body = document.querySelector("body");
     phoneTl.set(["#iphones-group-2"], { yPercent: 0});
     phoneTl.set(["#iphones-group-3"], { yPercent: -100});
     phoneTl.set(["#iphones-group-4"], { yPercent: -100});
-    // Scene 2 - 
+
+    // *******************************
+    //  Scene 2 - Values animation
+    // *******************************
+
     var valuesTl = new TimelineMax();
     var valuesEl = document.getElementById('square');
     var dur = 10;
@@ -127,6 +131,10 @@ var body = document.querySelector("body");
     valuesTl.from("#square2", 4, {height: 0,ease: defaultEase}, "+=3");
     valuesTl.from("#square3", 4, {height: 0,ease: defaultEase}, "+=3");
 
+    // *******************************
+    //  Scene 3 - Video animation
+    // *******************************
+
     var videoTl = new TimelineMax();
     var videoEl = document.getElementById('video');
     var dur = 10;
@@ -146,6 +154,29 @@ var body = document.querySelector("body");
     .addTo(ctrl);
     videoTl.from(["#video"],10, {width: 0,ease: defaultEase}, "+=0");
 
+    // *******************************
+    //  Scene 4 - Map animation
+    // *******************************
+    var mapTl = new TimelineMax();
+    var mapEl = document.getElementById('map');
+    var dur = 10;
+    var defaultEase = Linear.easeNone;
+    new ScrollMagic.Scene({
+      duration:1000,
+      reverse: true,
+      triggerElement: mapEl,
+      triggerHook: 'onEnter',
+      offset: 200,
+      pushfollowers: false
+    })
+    .setTween(mapTl)
+    .addTo(ctrl);
+    mapTl.from(["#map"],10, {width: 0,ease: defaultEase}, "+=0");
+      
+    // *******************************
+    //  Scene 5 - Text Knockout Slideup Animation
+    // *******************************
+    
     var sections = document.getElementsByTagName("section");
     var sectionsArray = Array.from(sections);
 
@@ -153,6 +184,7 @@ var body = document.querySelector("body");
       var knockOutText = element.querySelector(".knockout-text");
       var sublineText = element.querySelector(".subline-text");
       var asideText = element.querySelector(".aside-text");
+      var headlineText = element.querySelector(".cb-title__name");
 
       // Break out of function if no element found
       if (!knockOutText || !sublineText) return;
@@ -286,7 +318,7 @@ var body = document.querySelector("body");
         // onComplete: scrollMagic
       });
       // preloaderTl.delay(0.25)
-      preloaderTl.to(".content", 1, { height: "0", ease: Expo.easeOut });
+      preloaderTl.to(".content", 1, { height: "0", ease: Expo.easeOut}, "+=1");
       preloaderTl.to("#pre-loader-logo", 1, { y: "100px", ease: Expo.easeOut }, "-=1");
       preloaderTl.to(".preloader", 0.5, { width: "0", ease: Expo.easeOut }, "-=" + 0.8);
       preloaderTl.to(["#pre-loader-container"], 0.5, { autoAlpha: 0, ease: Linear.easeNone }, "+=0.35");
@@ -336,3 +368,38 @@ var body = document.querySelector("body");
 
   }
 
+ // Cursor 
+ const $bigBall = document.querySelector('.cursor__ball--big');
+ const $smallBall = document.querySelector('.cursor__ball--small');
+ const $hoverables = document.querySelectorAll('.hoverable');
+ 
+ // Listeners
+ document.body.addEventListener('mousemove', onMouseMove);
+ for (let i = 0; i < $hoverables.length; i++) {
+   $hoverables[i].addEventListener('mouseenter', onMouseHover);
+   $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+ }
+ 
+ // Move the cursor
+ function onMouseMove(e) {
+   TweenMax.to($bigBall, .4, {
+     x: e.pageX - 15,
+     y: e.pageY - 15
+   })
+   TweenMax.to($smallBall, .1, {
+     x: e.pageX - 5,
+     y: e.pageY - 7
+   })
+ }
+ 
+ // Hover an element
+ function onMouseHover() {
+   TweenMax.to($bigBall, .3, {
+     scale: 4
+   })
+ }
+ function onMouseHoverOut() {
+   TweenMax.to($bigBall, .3, {
+     scale: 1
+   })
+ }

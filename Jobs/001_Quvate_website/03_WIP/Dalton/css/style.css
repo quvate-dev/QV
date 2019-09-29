@@ -134,15 +134,9 @@ li {
   }
 }
 
-@media (min-width: 64.375rem) {
-  .big-text {
-    font-size: 2.8125rem;
-  }
-}
-
 @media (min-width: 85rem) {
   .big-text {
-    font-size: 3.4375rem;
+    font-size: 2.8125rem;
   }
 }
 
@@ -305,6 +299,22 @@ h6,
   color: inherit;
 }
 
+.cursor {
+  pointer-events: none;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.cursor__ball circle {
+  fill: #f7f8fa;
+}
+
 .slide-right {
   -webkit-animation: slide-right 3s linear infinite both;
   animation: slide-right 3s linear infinite both;
@@ -432,6 +442,7 @@ h6,
   height: 2.875rem;
   top: 1.25rem;
   right: 1.25rem;
+  font-weight: 800;
 }
 
 @media (min-width: 25rem) {
@@ -554,6 +565,7 @@ h6,
   text-align: center;
   color: black;
   cursor: pointer;
+  font-weight: 600;
 }
 
 #nav-items ul li a:hover {
@@ -649,6 +661,7 @@ section {
     Text-block
 \*------------------------------------*/
 .text-block {
+  position: relative;
   text-align: left;
   max-width: 80%;
   position: relative;
@@ -691,7 +704,6 @@ section {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: transparent;
-  font-weight: 900;
   -webkit-text-stroke: 1px white;
   -webkit-transform: matrix(1, 0, 0, 1, 0, 500);
           transform: matrix(1, 0, 0, 1, 0, 500);
@@ -721,6 +733,14 @@ section {
           transform: rotate(-90deg);
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
+}
+
+.cb-title__name {
+  color: #0000000a;
+  font-size: 15vw;
+  position: absolute;
+  bottom: 50px;
+  white-space: nowrap;
 }
 
 /*------------------------------------*\
@@ -847,13 +867,7 @@ section {
 
 @media (min-width: 25rem) {
   #about .text-block {
-    max-width: 60%;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  #about .text-block {
-    max-width: 60%;
+    max-width: 45%;
   }
 }
 
@@ -893,16 +907,17 @@ section {
     Image
 \*------------------------------------*/
 #image {
+  background-color: #1573bb;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   padding: 0;
   width: 50%;
@@ -962,7 +977,13 @@ section {
 }
 
 #projects .value-container .text-block {
-  min-width: 13.75rem;
+  width: 80vw;
+}
+
+@media (min-width: 25rem) {
+  #projects .value-container .text-block {
+    width: 75vw;
+  }
 }
 
 @media (min-width: 37.5rem) {
@@ -974,12 +995,6 @@ section {
 @media (min-width: 50rem) {
   #projects .value-container .text-block {
     width: 80%;
-  }
-}
-
-@media (min-width: 64.375rem) {
-  #projects .value-container .text-block {
-    width: 31.25rem;
   }
 }
 
@@ -1011,34 +1026,48 @@ section {
   }
 }
 
-#projects .projects {
+/*------------------------------------*\
+    Projects page
+\*------------------------------------*/
+.projects {
   width: auto;
   display: table;
-  padding: 1.25rem;
+  padding-top: 3.75rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  padding-bottom: 3.75rem;
 }
 
-#projects .projects a {
-  font-size: 2.5rem;
-  font-weight: 500;
-}
-
-#projects .projects .project {
+.projects .project {
   padding: 3.75rem;
+  background: #1cb3aa;
 }
 
-#projects .projects .flex-grid {
+.projects .project .title {
+  text-align: left;
+}
+
+.projects .project .title a {
+  font-weight: 600;
+}
+
+.projects .project .title p {
+  text-align: left;
+}
+
+.projects .flex-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#projects .projects .flex-grid .col {
+.projects .flex-grid .col {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-#projects .projects .flex-grid-thirds {
+.projects .flex-grid-thirds {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1047,19 +1076,32 @@ section {
           justify-content: space-between;
 }
 
-#projects .projects .flex-grid-thirds .col {
+.projects .flex-grid-thirds .col {
+  width: 32%;
+}
+
+.flex-grid-thirds {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
   width: 32%;
 }
 
 @media (max-width: 400px) {
-  #projects .flex-grid,
-  #projects .flex-grid-thirds {
+  .flex-grid,
+  .flex-grid-thirds {
     display: block;
   }
-  #projects .flex-grid .col,
-  #projects .flex-grid-thirds .col {
+  .flex-grid .col,
+  .flex-grid-thirds .col {
     width: 100%;
-    margin: 0 0 0.625rem 0;
+    margin: 0 0 10px 0;
   }
 }
 
@@ -1080,14 +1122,9 @@ section {
   background-color: #1573bb;
 }
 
-#contact .text-block {
-  position: static;
-}
-
 @media (min-width: 64.375rem) {
   #contact .text-block {
-    max-width: 70%;
-    left: 10%;
+    max-width: 50%;
   }
 }
 
@@ -1108,5 +1145,34 @@ section {
 
 #contact .text-block p b {
   font-weight: 900;
+}
+
+#contact .cb-contact {
+  width: 50%;
+}
+
+@media (min-width: 50rem) {
+  #contact .cb-contact {
+    width: 25%;
+  }
+}
+
+#contact .cb-contact .cb-contact__headline {
+  margin: 0.9375rem 0;
+}
+
+#contact .cb-contact p {
+  margin: 0;
+}
+
+#contact .cb-contact p, #contact .cb-contact h2, #contact .cb-contact span {
+  text-align: left;
+  font-weight: 400;
+  color: white;
+  font-family: Circular, "Helvetica Neue", Helvetica, Roboto;
+}
+
+#contact .cb-contact .cb-contact__details {
+  padding: 0.9375rem 0;
 }
 /*# sourceMappingURL=style.css.map */

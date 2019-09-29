@@ -59,6 +59,22 @@ h6,
 	color: inherit;
 }
 
+.cursor {
+	pointer-events: none;
+	
+	&__ball {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  mix-blend-mode: difference;
+	  z-index: 1000;
+	  
+	  circle {
+		fill: #f7f8fa;
+	  }
+	}      
+}
+
 .slide-right {
 	-webkit-animation: slide-right 3s linear infinite both;
 	animation: slide-right 3s linear infinite both;
@@ -184,6 +200,7 @@ h6,
 	height: calculateRem(46px);
 	top: calculateRem(20px);
 	right: calculateRem(20px);
+	font-weight: 800;
 
 	@include breakpoint(x-small) {
 		width: calculateRem(56px);
@@ -277,6 +294,7 @@ h6,
 				text-align: center;
 				color: black;
 				cursor: pointer;
+				font-weight: 600;
 
 				&:hover {
 					text-decoration: line-through;
@@ -369,7 +387,7 @@ section {
     Text-block
 \*------------------------------------*/
 .text-block {
-	// position: absolute;
+	position: relative;
 	text-align: left;
 	max-width: 80%;
 	position: relative;
@@ -403,7 +421,7 @@ section {
 			letter-spacing: 1px;
 			text-transform: uppercase;
 			color: transparent;
-			font-weight: 900;
+			// font-weight: 900;
 			-webkit-text-stroke: 1px white;
 			transform: matrix(1, 0, 0, 1, 0, 500);
 		}
@@ -433,7 +451,14 @@ section {
 			// height: 50px;
 		}
 	}
+}
 
+.cb-title__name {
+	color: #0000000a;
+	font-size: 15vw;
+	position: absolute;
+	bottom: 50px;
+	white-space: nowrap;
 }
 
 /*------------------------------------*\
@@ -533,18 +558,13 @@ section {
 \*------------------------------------*/
 #about {
 	background-color: #d4a39f;
-	// margin-left: 100vw;
 
 	.text-block {
 		max-width: 60%;
 
 		@include breakpoint(x-small) {
-			max-width: 60%;
+			max-width: 45%;
 		}
-
-		@include breakpoint(small) {
-			max-width: 60%;
-		}	
 	}
 }
 
@@ -586,15 +606,9 @@ section {
 \*------------------------------------*/
 
 #image {
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
+	background-color: #1573bb;
 	justify-content: space-between;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
 	flex-direction: row;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	overflow: hidden;
 	padding: 0;
@@ -636,18 +650,18 @@ section {
 		padding: 0 calculateRem(100px);
 
 		.text-block {
-			min-width: calculateRem(220px);
+			width: 80vw;
 
+			@include breakpoint(x-small) {
+				width: 75vw;
+			}
+			
 			@include breakpoint(small) {
 				width: 80%;
 			}
 
 			@include breakpoint(medium) {
 				width: 80%;
-			}
-
-			@include breakpoint(large) {
-				width: calculateRem(500px);
 			}
 		}
 
@@ -669,55 +683,76 @@ section {
 			@include breakpoint(large) {
 				left: 10%;
 			}
-		}
+		}		
 	}
+}
 
-	.projects {
-		width: auto;
-		display: table;
-		padding: calculateRem(20px);
+/*------------------------------------*\
+    Projects page
+\*------------------------------------*/
 
-		a {
-			font-size: calculateRem(40px);
-			font-weight: 500;
-		}
+.projects {
+	width: auto;
+	display: table;
+	padding-top: calculateRem(60px);
+	padding-right: calculateRem(20px);
+	padding-left: calculateRem(20px);
+	padding-bottom: calculateRem(60px);
+	
+	.project {
+		padding: calculateRem(60px);
+		background: #1cb3aa;
 
-		.project {
-			padding: calculateRem(60px);
-		}
+		.title {
+			text-align: left;
 
-		.flex-grid {
-			display: flex;
-		}
-
-		.flex-grid .col {
-			flex: 1;
-		}
-
-		.flex-grid-thirds {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.flex-grid-thirds .col {
-			width: 32%;
-		}
-
-	}
-
-	@media (max-width: 400px) {
-
-		.flex-grid,
-		.flex-grid-thirds {
-			display: block;
-
-			.col {
-				width: 100%;
-				margin: 0 0 calculateRem(10px) 0;
+			a {
+				font-weight: 600;
+			}
+			p {
+				text-align: left;
 			}
 		}
 	}
+	
+	.flex-grid {
+		display: flex;
+	}
+	
+	.flex-grid .col {
+		flex: 1;
+	}
+	
+	.flex-grid-thirds {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.flex-grid-thirds .col {
+		width: 32%;
+	}
 }
+
+.flex-grid-thirds {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
+	width: 32%;
+}
+
+@media (max-width: 400px) {
+	.flex-grid,
+	.flex-grid-thirds {
+		display: block;
+		.col {
+			width: 100%;
+			margin: 0 0 10px 0;
+		}
+	}
+}
+
 
 /*------------------------------------*\
     Contact page
@@ -730,11 +765,11 @@ section {
 	background-color: #1573bb;
 
 	.text-block {
-		position: static;
+		// position: static;
 
 		@include breakpoint(large) {
-			max-width: 70%;
-			left: 10%;
+			max-width: 50%;
+			// left: 10%;
 		}
 
 		.subline-text {
@@ -755,6 +790,31 @@ section {
 			b {
 				font-weight: 900;
 			}
+		}
+	}
+	.cb-contact {
+		// color: white;
+		// line-height: calculateRem(30px);
+		width: 50%;
+		@include breakpoint(medium) {
+			width: 25%;
+		}
+		.cb-contact__headline {
+			// font-size: calculateRem(50px);
+			margin: calculateRem(15px) 0;
+		}
+		p{
+			margin: 0;
+		}
+		p, h2, span {
+			text-align: left;
+			// font-size: calculateRem(18px);
+			font-weight: 400;
+			color: white;
+			font-family: Circular, "Helvetica Neue", Helvetica, Roboto,
+		}
+		.cb-contact__details {
+			padding: calculateRem(15px) 0;
 		}
 	}
 }

@@ -26,10 +26,22 @@
 </head>
 
 <body>
-  
+  <div class="cursor">
+    <div class="cursor__ball cursor__ball--big ">
+      <svg height="30" width="30">
+        <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+      </svg>
+    </div>
+
+    <div class="cursor__ball cursor__ball--small">
+      <svg height="27" width="10">
+        <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+      </svg>
+    </div>
+  </div>
   <header id="logo-container">
     <!-- LOGO -->
-    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 75 70" id="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 70" id="logo" class="hoverable">
       <title>Logo</title>
       <g ><g><path d="M42.68,22.27h0L55.75,35.35l0,0v0L59.38,39A27.67,27.67,0,1,0,4.84,31.21l.56.56L9.23,35.6l9.24,9.24,0,0c.26.29.52.57.8.85A18.65,18.65,0,0,0,42.87,48l3.45,3.45a23.46,23.46,0,0,1-30.43-2.35L5.51,38.68h0L0,33.18c0-.23,0-.46,0-.7A32.48,32.48,0,1,1,63.27,42.85L75.6,55.18l-3.4,3.4L39.29,25.67h0a9.66,9.66,0,0,0-13.62,0h0A9.63,9.63,0,0,0,39.29,39.29h0l.42-.44L37.6,36.74h0L36.82,36l3.4-3.4,1.72,1.72h0l3.83,3.83h0l3.16,3.16h0l3.52,3.52h0l3,3.05L59,51.3,69.22,61.56,65.82,65,55.87,55l-.42.44A32.48,32.48,0,0,1,.88,40L12.74,51.87l.18.18a27.68,27.68,0,0,0,39.13,0l.42-.44-3-3h0l-3.4-3.4-3-3h0l-.93.93A14.44,14.44,0,0,1,22.27,22.27h0a14.49,14.49,0,0,1,20.4,0Zm3.38-2.57,9.68,9.68a23.46,23.46,0,0,0-46.54.23l4.73,4.74c-.06-.62-.09-1.24-.09-1.87A18.65,18.65,0,0,1,45.67,19.3Z"/></g></g>
     </svg>
@@ -92,12 +104,12 @@
       <div class="text-block">
         <div class="text-container">
           <h1 class="knockout-text big-text">
-            We are a
+            An independent
           </h1>
         </div>
         <div class="text-container">
           <h2 class="subline-text med-text">
-            Marketing agency for brands that want more
+            creative marketing agency. We collaborate with companies to help them shine.
           </h2>
         </div>
         <div class="text-container small-text text-container--aside">
@@ -124,47 +136,64 @@
       <div class="text-block">
         <div class="text-container">
           <h1 class="knockout-text big-text">
-            We're sweet at
+            Our protocols include
           </h1>
         </div>
         <div class="text-container">
           <h2 class="subline-text med-text">
-            Beautiful digital ads,
-            emails & landings
+            display ads, marketing emails & campaigns, landing pages & websites of all sizes.
           </h2>
         </div>
         <div class="text-container text-container--aside">
-          <h3 class="aside-text small-text">Innovation</h3>
+          <h3 class="aside-text small-text">What we make</h3>
         </div>
       </div>
 
       <div class="vertical-overflow-slider" id="phone-slider">
         <div id="iphones-col-1" class="vertical-overflow-slider-column">
           <div class="iphones" id="iphones-group-1">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_thumbnail.jpg" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey.jpg" alt="journey_thumbnail" />
-            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="journey_start_thumbnail"   alt="" >
-            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="journey_start_thumbnail"  alt="">
-            <img src="img/display-ads/display-ad-sports.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="journey_start_thumbnail"  alt="">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_thumbnail.jpg" class="hoverable"
+              data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey.jpg"
+              alt="journey_thumbnail" />
+            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg"
+              alt="journey_start_thumbnail" alt="">
+            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg"
+              alt="journey_start_thumbnail" alt="">
+            <img src="img/display-ads/display-ad-sports.png" data-action="zoom"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg"
+              alt="journey_start_thumbnail" alt="">
           </div>
           <div class="iphones" id="iphones-group-2">
-            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-sports.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-sports.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
           </div>
         </div>
         <div id="iphones-col-2" class="vertical-overflow-slider-column">
           <div class="iphones" id="iphones-group-3">
-            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-restaurant.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
           </div>
           <div class="iphones" id="iphones-group-4">
-            <img src="img/display-ads/display-ad-sports.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
-            <img src="img/display-ads/display-ad-restaurant.png" alt="">
+            <img src="img/display-ads/display-ad-sports.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" class="hoverable"
+              data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_start.jpg" alt="">
+            <img src="img/display-ads/display-ad-restaurant.png" class="hoverable" alt="">
           </div>
         </div>
       </div>
+  
+      <div class="cb-title__name">About Us</div>
     </section>
 
     <section id="window" class="page">
@@ -173,102 +202,108 @@
       </video>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects">
       
       <div class="value-container" id="value-container">
-        <div class="text-block">
+        <div class="contact-right text-block">
           <div class="text-container">
             <h1 class="knockout-text big-text">
-             Our Values
+              Our values are both
             </h1>
           </div>
           <div class="text-container">
             <h2 class="subline-text med-text">
-              Beautiful digital ads,
-              emails & landing pages
+              our identity and our promise defining and motivating our every interaction with you
             </h2>
           </div>
           <div class="text-container small-text text-container--aside">
-            <h3 class="aside-text">Innovation</h3>
+            <h3 class="aside-text">Our Approach</h3>
           </div>
         </div>
-
-        <!-- <div id="square">
-          Square here
-        </div>
-        <div id="square2">
-          Square here
-        </div>
-        <div id="square3">
-          Square here
-        </div> -->
-
+  
         <div class="projects">
           <div class="flex-grid-thirds" id="square">
             <div class="col">
               <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
+                <div class="title">
+                  <a itemprop="name" class="med-text">
+                    QUALITY
+                  </a>
+                  <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae condimentum
+                    egestas, libero dolor auctor tellus, eu consectetur</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
+              </div>
+            </div>
+  
+            <div class="col">
+              <div class="project">
+                <div class="title">
+                  <a itemprop="name" class="med-text">
+                    HARMONY
+                  </a>
+                  <P>We work with our clients to collectively nurture ideas, shape strategies, and evolve our designs.
+                    We’ve built an inclusive and highly collaborative culture that brings out the best in everybody,
+                    helping us all to learn and achieve common goals</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
             </div>
             <div class="col">
               <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
-              </div>
-            </div>
-            <div class="col">
-              <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
+                <div class="title">
+                  <a itemprop="name" class="med-text">
+                    CREATIVE
+                  </a>
+                  <P>To us, creativity is problem solving, and we believe in solving the impossible. We never settle for
+                    the first, easiest, or quickest solution. We carefully analyze, research, and create a custom solution
+                    that not only solves your challenge but also helps you stand out</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
             </div>
           </div>
-        
+  
           <div class="flex-grid-thirds" id="square2">
             <div class="col">
               <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
-              </div>
-            </div>
-               <div class="col">
-              <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
-              </div>
-            </div>
-             <div class="col">
-              <div class="project">
-                <div class="title"></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
-              </div>
-            </div>
-          </div>
-        
-          <div class="flex-grid-thirds" id="square3">
-              <div class="col">
-              <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
+                <div class="title">
+                  <a itemprop="name" class="med-text">INNOVATIVE</a>
+                  <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae condimentum
+                    egestas, libero dolor auctor tellus, eu consectetur</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
             </div>
             <div class="col">
               <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
+                <div class="title">
+                  <a itemprop="name" class="med-text">
+                    LEADING
+                  </a>
+                  <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sollicitudin, tellus vitae condimentum
+                    egestas, libero dolor auctor tellus, eu consectetur</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
             </div>
-              <div class="col">
+            <div class="col">
               <div class="project">
-                <div class="title"><a itemprop="name">200crowd</a><sup>2018</sup></div>
-        <!--         <div class="image-200">big image here hidden until hover</div> -->
+                <div class="title">
+                  <a itemprop="name" class="med-text">
+                    ADAPTING
+                  </a>
+                  <P>Be prepared. Embrace and drive change. Be opportunistic. Be adaptable.</P>
+                </div>
+                <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
             </div>
           </div>
-        
+  
         </div>
-      </div>       
+      </div>
+  
+      <div class="cb-title__name">Our Values</div> 
     </section>
 
     <section id="image" class="page">
@@ -276,45 +311,58 @@
       <div id='map'></div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="text-block">
-        <div class="text-container">
-          <h1 class="knockout-text med-text">
-            <!-- Get in touch -->
-            <!-- Want to work together? -->
-            interested in us?
-          </h1>
-        </div>
-        <div class="text-container">
-          <h2 class="subline-text med-text">
-            Lets work together
-          </h2>
-        </div>
-        <!-- <div class="text-container text-container--aside">
-          <h3 class="aside-text">Contact us</h3>
-        </div> -->
-      </div>
-      <div class="text-block ">
-        <div class="text-container">
-          <h2 class="subline-text small-text ">
-            Contact
-          </h2>
-          <p>
-            <b>Telephone</b><br>
-            0739392343
-          </p>
-          <p>
-            <b>EMAIL</b><br>
-            <a href="mailto:quvate@gmail.com">quvate@gmail.com</a>
-          </p>
-          <p>
-            <b>SOCIAL</b><br>
-            <a href="http://" target="_blank">facebook</a> <br>
-            <a href="http://" target="_blank">Twitter</a> <br>
-            <a href="http://" target="_blank">Linkedin</a> <br>
-          </p>
+    <section id="contact" class="page">
+      <div class="contact-container" id="contact-container">
+        <div class="text-block">
+          <div class="text-container">
+            <h1 class="knockout-text big-text" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+              Intersted in working together?
+            </h1>
+          </div>
+          <div class="text-container">
+            <h2 class="subline-text med-text" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+              Contact us
+            </h2>
+          </div>
+          <div class="text-container text-container--aside">
+            <h3 class="aside-text small-text" style="transform: matrix(1, 0, 0, 1, 0, 0);">Innovation</h3>
+          </div>
         </div>
       </div>
+      <div class="cb-contact">
+        <h2 class="cb-contact__headline med-text">
+          Contact
+        </h2>
+
+        <div class="cb-contact__details">
+          <p class="small-text">Work with us</p>
+          <p class="small-text">hello@quvate.co</p>
+        </div>
+
+        <div class="cb-contact__details">
+          <p class="small-text">Become one of us</p>
+          <p class="small-text">careers@quvate.co</p>
+        </div>
+
+        <div class="cb-contact__details">
+          <p class="small-text">Telephone</p>
+          <p class="small-text"> +44 161 236 6969</p>
+        </div>
+
+        <div class="cb-contact__details">
+          <p class="small-text">Address</p>
+          <p class="small-text"> Blok Street </p>
+          <p class="small-text">MANCHESTER</p>
+            <p class="small-text"> M1</p>
+        </div>
+
+        <div class="cb-contact__details">
+          <p class="small-text">Social</p>
+          <p class="small-text">Facebook</p>
+          <p class="small-text">Instagram</p>
+        </div>
+      </div>
+      <div class="cb-title__name">Contact</div>
     </section>
   <!-- </main> -->
 
