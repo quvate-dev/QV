@@ -10,9 +10,16 @@
     rotation: 45,
     ease: Power1.easeOut
   });
-  navTL.to("#nav-items", 0.5, {
-    width: "50%"
-  }, "-=0.25");
+  if(window.innerWidth < 600) {
+    navTL.to("#nav-items", 0.5, {
+      width: "100%"
+    }, "-=0.25");
+  } else {
+    navTL.to("#nav-items", 0.5, {
+      width: "50%"
+    }, "-=0.25");
+  }
+  
 
   function menuIn() {
     navTL.reversed() ? navTL.play() : navTL.reverse();

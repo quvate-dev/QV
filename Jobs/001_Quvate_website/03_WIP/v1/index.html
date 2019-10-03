@@ -55,10 +55,10 @@
   </nav>
   <div id="nav-items">
     <ul>
-      <li><a href="#home" class="big-text">Home</a></li>
-      <li><a href="#about" class="big-text">About</a></li>
-      <li><a href="#projects" class="big-text">Our Values</a></li>
-      <li><a href="#contact" class="big-text">Contact</a></li>
+      <li><a href="#home" class="big-text" onclick="menuIn()">Home</a></li>
+      <li><a href="#about" class="big-text" onclick="menuIn()">About</a></li>
+      <li><a href="#projects" class="big-text" onclick="menuIn()">Our Values</a></li>
+      <li><a href="#contact" class="big-text" onclick="menuIn()">Contact</a></li>
     </ul>
   </div>
   <div id="pre-loader-container" class="page">
@@ -117,11 +117,11 @@
       </div>
 
       <div class="intro__scroll">
-        Checkout what we do best<div class="slide-right"></div>
+        Scroll right to see more<div class="slide-right"></div>
       </div>
 
       <div class="logo_video">
-        <!-- <img src="img/q-mask.png" alt=""> -->
+        <!-- <div class="video_overlay"></div> -->
         <video playsinline autoplay muted="muted" loop="loop">
           <source src="img/vantabg.mp4" type="video/mp4">
         </video>
@@ -146,7 +146,7 @@
         </div>
         <div class="text-container">
           <h2 class="subline-text med-text">
-            display ads, marketing emails & campaigns, landing pages & websites of all sizes.
+            display ads, emails & websites.
           </h2>
         </div>
         <div class="text-container text-container--aside">
@@ -157,7 +157,7 @@
       <div class="vertical-overflow-slider" id="phone-slider">
         <div id="iphones-col-1" class="vertical-overflow-slider-column">
           <div class="iphones" id="iphones-group-1">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey_thumbnail.jpg" class="hoverable"
+            <img src="img/display-ads/display-ad-sports.png" class="hoverable"
               data-action="zoom" data-original="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/journey.jpg"
               alt="journey_thumbnail" />
             <img src="img/display-ads/display-ad-fitness-gym.png" data-action="zoom" class="hoverable"
@@ -213,16 +213,16 @@
         <div class="contact-right text-block">
           <div class="text-container">
             <h2 class="knockout-text big-text">
-              Our values are both
+              Our values are
             </h2>
           </div>
           <div class="text-container">
             <h2 class="subline-text med-text">
-              our identity and our promise defining and motivating our every interaction with you
+              Our identity and our promise defining and motivating our every interaction with you.
             </h2>
           </div>
           <div class="text-container small-text text-container--aside">
-            <h3 class="aside-text">Our Approach</h3>
+            <h3 class="aside-text">Our approach</h3>
           </div>
         </div>
   
@@ -246,9 +246,8 @@
                   <a itemprop="name" class="med-text">
                     HARMONY
                   </a>
-                  <P>We work with our clients to collectively nurture ideas, shape strategies, and evolve our designs.
-                    We’ve built an inclusive and highly collaborative culture that brings out the best in everybody,
-                    helping us all to learn and achieve common goals.</P>
+                  <P>We work with our clients to collectively nurture ideas, shape strategies, & evolve our designs.
+                    We’ve built a highly collaborative culture that brings out the best in everybody, helping us to achieve common goals.</P>
                 </div>
                 <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
@@ -259,9 +258,9 @@
                   <a itemprop="name" class="med-text">
                     CREATIVE
                   </a>
-                  <P>To us, creativity is problem solving, and we believe in solving the impossible. We never settle for
-                    the first, easiest, or quickest solution. We carefully analyze, research, and create a custom solution
-                    that not only solves your challenge but also helps you stand out.</P>
+                  <P>Creativity can be problem solving & we believe in solving the impossible. We carefully analyze,
+                    research, & create a custom solution that not only solves your challenge but also helps you stand
+                    out.</P>
                 </div>
                 <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
@@ -295,7 +294,7 @@
                   <a itemprop="name" class="med-text">
                     ADAPTING
                   </a>
-                  <P>We are prepared. We embrace and drive change. We are opportunistic. We are adaptable.</P>
+                  <P>We are prepared. We embrace and drive change. We are opportunistic. We are adaptable in both technologies and designs.</P>
                 </div>
                 <!--         <div class="image-200">big image here hidden until hover</div> -->
               </div>
@@ -308,7 +307,7 @@
       <div class="cb-title__name">Our Values</div> 
     </section>
 
-    <section id="image" class="page">
+    <section id="map-wrapper" class="page">
       <!-- <img data-v-6f0700eb="" src="https://studiolovelock.com/wp-content/uploads/2019/02/EchoHero_Image_StudioLovelock.jpg" class="image-item"> -->
       <div id='map'></div>
     </section>

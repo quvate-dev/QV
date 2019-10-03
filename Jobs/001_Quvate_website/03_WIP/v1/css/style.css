@@ -244,9 +244,45 @@ img.zoom-img {
   cursor: default;
 }
 
+/*------------------------------------*\
+    Map
+\*------------------------------------*/
+#map-wrapper {
+  background-color: #1573bb;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  padding: 0;
+  width: 300px;
+  min-width: 300px;
+}
+
+@media (min-width: 50rem) {
+  #map-wrapper {
+    width: 50%;
+    min-width: 0;
+  }
+}
+
 #map {
-  width: 100vh;
+  width: 300px;
+  min-width: 300px;
   height: 100vh;
+}
+
+@media (min-width: 50rem) {
+  #map {
+    width: 100vw;
+    min-width: 0;
+  }
 }
 
 .mapboxgl-control-container {
@@ -282,6 +318,7 @@ body {
   background-color: #222426;
   overflow: hidden;
   cursor: none;
+  min-height: -webkit-fill-available;
 }
 
 h1,
@@ -304,6 +341,13 @@ h6,
 
 .cursor {
   pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 37.5rem) {
+  .cursor {
+    display: block;
+  }
 }
 
 .cursor__ball {
@@ -413,7 +457,7 @@ h6,
   height: 100%;
   margin: 0 auto;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -469,10 +513,12 @@ h6,
   border: 0.125rem solid white;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-highlight: none;
 }
 
 #nav #nav-icon:hover {
-  border: 0.125rem solid #dab056;
+  border: 0.125rem solid #34766d;
 }
 
 #nav #nav-icon #line-one,
@@ -483,7 +529,7 @@ h6,
   position: absolute;
   z-index: 2;
   display: block;
-  background-color: #cea142;
+  background-color: #34766d;
 }
 
 #nav #nav-icon #line-one {
@@ -562,6 +608,7 @@ h6,
 
 #nav-items ul li {
   display: block;
+  min-width: 300px;
 }
 
 #nav-items ul li a {
@@ -623,6 +670,7 @@ h6,
 \*------------------------------------*/
 section {
   min-height: calc(100vh - 0rem);
+  min-height: -webkit-fill-available;
   max-height: 100vh;
   width: calc(100vw - 0rem);
   padding: 1.25rem;
@@ -650,6 +698,8 @@ section {
 
 @media (min-width: 37.5rem) {
   section {
+    min-height: calc(100vh - 0rem);
+    min-height: -webkit-fill-available;
     padding: 1.25rem;
   }
 }
@@ -675,13 +725,14 @@ section {
 @media (min-width: 25rem) {
   .text-block {
     max-width: 70%;
-    margin-left: 1.25rem;
+    margin-left: 1.875rem;
   }
 }
 
 @media (min-width: 37.5rem) {
   .text-block {
     max-width: 59%;
+    margin-left: 1.25rem;
   }
 }
 
@@ -845,8 +896,16 @@ section {
   padding-top: 3.125rem;
   font-family: roboto;
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 6.25rem;
   z-index: 3;
+  left: 1.25rem;
+}
+
+@media (min-width: 25rem) {
+  #home .intro__scroll {
+    left: 3.125rem;
+    bottom: 5rem;
+  }
 }
 
 #home .logo_video {
@@ -859,14 +918,21 @@ section {
   display: flex;
   z-index: 0;
   height: 100%;
+  opacity: 0.6;
+}
+
+@media (min-width: 37.5rem) {
+  #home .logo_video {
+    opacity: 0.8;
+  }
 }
 
 #home video {
-  width: 60%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 2.5rem auto;
 }
 
-@media (min-width: 25rem) {
+@media (min-width: 37.5rem) {
   #home video {
     width: 50%;
   }
@@ -887,7 +953,7 @@ section {
   max-width: 60%;
 }
 
-@media (min-width: 25rem) {
+@media (min-width: 37.5rem) {
   #about .text-block {
     max-width: 45%;
   }
@@ -908,28 +974,7 @@ section {
 }
 
 #window {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 0;
-  width: 100vh;
-  min-width: 500px;
   background-color: #1cb3aa;
-}
-
-/*------------------------------------*\
-    Image
-\*------------------------------------*/
-#image {
-  background-color: #1573bb;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -942,7 +987,30 @@ section {
           align-items: center;
   overflow: hidden;
   padding: 0;
-  width: 50%;
+  width: 100vh;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+@media (min-width: 25rem) {
+  #window {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 50rem) {
+  #window {
+    min-width: 350px;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 64.375rem) {
+  #window {
+    min-width: 500px;
+    max-width: 500px;
+  }
 }
 
 /*------------------------------------*\
@@ -950,7 +1018,9 @@ section {
 \*------------------------------------*/
 #projects {
   background-color: #1cb3aa;
-  width: calc(450vw - 0rem);
+  width: calc(320vw - 0rem);
+  overflow: hidden;
+  padding: 2.5rem 2.5rem 0 2.5rem;
 }
 
 @media (min-width: 25rem) {
@@ -1001,7 +1071,8 @@ section {
 }
 
 #projects .value-container .text-block {
-  width: 80vw;
+  width: 60%;
+  max-width: 300px;
 }
 
 @media (min-width: 25rem) {
@@ -1066,15 +1137,27 @@ section {
 .projects {
   width: auto;
   display: table;
-  padding-top: 3.75rem;
+  padding-top: 6.25rem;
   padding-right: 1.25rem;
   padding-left: 1.25rem;
   padding-bottom: 3.75rem;
 }
 
+@media (min-width: 37.5rem) {
+  .projects {
+    padding-top: 3.75rem;
+  }
+}
+
 .projects .project {
-  padding: 3.75rem;
+  padding: 1.25rem;
   background: #1cb3aa;
+}
+
+@media (min-width: 37.5rem) {
+  .projects .project {
+    padding: 3.75rem;
+  }
 }
 
 .projects .project .title {
@@ -1123,10 +1206,6 @@ section {
           justify-content: space-between;
 }
 
-.flex-grid-thirds .col {
-  width: 32%;
-}
-
 @media (max-width: 400px) {
   .flex-grid,
   .flex-grid-thirds {
@@ -1134,7 +1213,7 @@ section {
   }
   .flex-grid .col,
   .flex-grid-thirds .col {
-    width: 100%;
+    width: 240px !important;
     margin: 0 0 10px 0;
   }
 }

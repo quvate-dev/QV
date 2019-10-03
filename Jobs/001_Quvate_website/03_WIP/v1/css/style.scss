@@ -31,6 +31,7 @@ body {
 	background-color: #222426;
 	overflow: hidden;
 	cursor: none;
+	min-height: -webkit-fill-available;
 }
 
 // hr {
@@ -62,11 +63,11 @@ h6,
 
 .cursor {
 	pointer-events: none;
-	// display: none;
+	display: none;
 
-	// @include breakpoint(small) {
-	// 	display: block;
-	// }
+	@include breakpoint(small) {
+		display: block;
+	}
 	
 	&__ball {
 	  position: fixed;
@@ -148,19 +149,6 @@ h6,
 	padding-left: calculateRem(10px);
 }
 
-// #pre-loader {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   position:absolute;
-//   top:40px;
-//   left:40px;
-//   width:160px;
-//   height:230px;
-//   z-index:1;
-//   overflow: hidden;
-// }
-
 .preloader {
 	display: flex;
 	align-items: center;
@@ -175,7 +163,7 @@ h6,
 	height: 100%;
 	margin: 0 auto;
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 1000;
@@ -225,9 +213,11 @@ h6,
 		transition-duration: 0.2s;
 		border: calculateRem(2px) solid white;
 		box-sizing: content-box;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-highlight: none;
 
 		&:hover {
-			border: calculateRem(2px) solid #dab056;
+			border: calculateRem(2px) solid #34766d;
 		}
 
 		#line-one,
@@ -238,9 +228,9 @@ h6,
 			position: absolute;
 			z-index: 2;
 			display: block;
-			background-color: #cea142;
+			background-color: #34766d;
 		}
-
+		
 		#line-one {
 			left: calculateRem(0px);
 			top: calculateRem(22px);
@@ -295,6 +285,7 @@ h6,
 
 		li {
 			display: block;
+			min-width: 300px;
 
 			a {
 				text-align: center;
@@ -362,6 +353,7 @@ h6,
 
 section {
 	min-height: calc(100vh - #{calculateRem(0px)});
+	min-height: -webkit-fill-available;
 	max-height: 100vh;
 	width: calc(100vw - #{calculateRem(0px)});
 	padding: calculateRem(20px);
@@ -381,6 +373,8 @@ section {
 	}
 
 	@include breakpoint(small) {
+		min-height: calc(100vh - #{calculateRem(0px)});
+		min-height: -webkit-fill-available;
 		padding: calculateRem(20px);
 	}
 
@@ -402,11 +396,12 @@ section {
 
 	@include breakpoint(x-small) {
 		max-width: 70%;
-		margin-left: calculateRem(20px);
+		margin-left: calculateRem(30px);
 	}
 
 	@include breakpoint(small) {
 		max-width: 59%;
+		margin-left: calculateRem(20px);
 	}
 
 	@include breakpoint(medium) {
@@ -546,9 +541,14 @@ section {
 		padding-top: calculateRem(50px);
 		font-family: roboto;
 		position: absolute;
-		bottom: calculateRem(40px);
+		bottom: calculateRem(100px);
 		z-index: 3;
-		// left: calculateRem(100px);
+		left: calculateRem(20px);
+
+		@include breakpoint(x-small) {
+			left: calculateRem(50px);
+			bottom: calculateRem(80px);
+		}
 	}
 
 	.logo_video {
@@ -559,13 +559,28 @@ section {
     display: flex;
     z-index: 0;
     height: 100%;
-		// opacity: 0.3;
+		opacity: 0.6;
+
+		@include breakpoint(small) {
+			opacity: 0.8;
+		}
+		// .video_overlay {
+		// 	background-color: #222227;
+		// 	position: absolute;
+		// 	z-index: 1000;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	opacity: 0.7;
+		// 	@include breakpoint(medium) {
+		// 		opacity: 0;
+		// 	}
+		// }
 	}
 
 	video {
-    width: 60%;
-    margin: 0 auto;
-		@include breakpoint(x-small) {
+    width: 70%;
+    margin: calculateRem(40px) auto;
+		@include breakpoint(small) {
 			width: 50%;
 		}
 	}
@@ -584,7 +599,7 @@ section {
 	.text-block {
 		max-width: 60%;
 
-		@include breakpoint(x-small) {
+		@include breakpoint(small) {
 			max-width: 45%;
 		}
 	}
@@ -606,35 +621,28 @@ section {
 }
 
 #window {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+	background-color: #1cb3aa;
   justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
   padding:0;
 	width: 100vh;
-	min-width: 500px;
-	background-color: #1cb3aa;
-}
+	min-width: 200px;
+	max-width: 200px;
 
-/*------------------------------------*\
-    Image
-\*------------------------------------*/
-
-#image {
-	background-color: #1573bb;
-	justify-content: space-between;
-	flex-direction: row;
-	align-items: center;
-	overflow: hidden;
-	padding: 0;
-	width: 50%;
+	@include breakpoint(x-small) {
+		min-width: 300px;
+		max-width: 300px;
+	}
+	@include breakpoint(medium) {
+		min-width: 350px;
+		max-width: 350px;
+	}
+	@include breakpoint(large) {
+		min-width: 500px;
+		max-width: 500px;
+	}
 }
 
 /*------------------------------------*\
@@ -642,7 +650,9 @@ section {
 \*------------------------------------*/
 #projects {
 	background-color: #1cb3aa;
-	width: calc(450vw - #{calculateRem(0px)});
+	width: calc(320vw - #{calculateRem(0px)});
+	overflow: hidden;
+	padding: calculateRem(40px) calculateRem(40px) 0 calculateRem(40px);
 
 	@include breakpoint(x-small) {
 		width: calc(300vw - #{calculateRem(0px)});
@@ -671,7 +681,8 @@ section {
 		width: 100%;
 
 		.text-block {
-			width: 80vw;
+			width: 60%;
+			max-width: 300px;
 
 			@include breakpoint(x-small) {
 				width: 75vw;
@@ -723,15 +734,21 @@ section {
 .projects {
 	width: auto;
 	display: table;
-	padding-top: calculateRem(60px);
+	padding-top: calculateRem(100px);
 	padding-right: calculateRem(20px);
 	padding-left: calculateRem(20px);
 	padding-bottom: calculateRem(60px);
+
+	@include breakpoint(small) {
+		padding-top: calculateRem(60px);
+	}
 	
 	.project {
-		padding: calculateRem(60px);
+		padding: calculateRem(20px);
 		background: #1cb3aa;
-
+		@include breakpoint(small) {
+			padding: calculateRem(60px);	
+		}
 		.title {
 			text-align: left;
 
@@ -767,16 +784,12 @@ section {
 	justify-content: space-between;
 }
 
-.flex-grid-thirds .col {
-	width: 32%;
-}
-
 @media (max-width: 400px) {
 	.flex-grid,
 	.flex-grid-thirds {
 		display: block;
 		.col {
-			width: 100%;
+			width: 240px !important;
 			margin: 0 0 10px 0;
 		}
 	}

@@ -4,11 +4,11 @@
   var textObj = {
     "home": {
       "knockout-text": {
-        0: "We are a",
-        1: "We design, build and ",
+        0: "An independent",
+        1: "We design, build and",
       },
       "subline-text": {
-        0: "Marketing agency for brands that want more",
+        0: "creative marketing agency. We collaborate with companies to help them shine.",
         1: "operate solutions and digital strategies and together we can bring your ideas to life.",
       },
       "aside-text": {
@@ -18,40 +18,40 @@
     },
     "about": {
       "knockout-text": {
-        0: "We're sweet at",
-        1: "Strong campaigns that",
+        0: "Our protocols include",
+        1: "Campaigns that",
       },
       "subline-text": {
-        0: "Beautiful digital ads, emails & landing pages",
-        1: "work & look great across all platforms including mobile devices.",
+        0: "display ads, emails & websites.",
+        1: "Produce results & look great across all platforms.",
       },
       "aside-text": {
-        0: "What we do",
+        0: "What we make",
         1: "What we do",
       }
     },
     "projects": {
       "knockout-text": {
-        0: "We specialise in",
-        1: "Our values are both",
+        0: "Our values are",
+        1: "With us you will",
       },
       "subline-text": {
-        0: "Beautiful digital ads, emails & landing pages",
-        1: "our identity and our promise defining and motivating our every interaction with you",
+        0: "Our identity and our promise defining and motivating our every interaction with you.",
+        1: "With us, you will have a loyal partner ready to give you willingness and competence to solve any issues you may encounter on your path.",
       },
       "aside-text": {
-        0: "What we do",
-        1: "Creativity",
+        0: "Insights",
+        1: "Our approach",
       }
     },
     "contact": {
       "knockout-text": {
-        0: "Lets get a coffee",
-        1: "GET IN TOUCH",
+        0: "GET IN TOUCH",
+        1: "Lets get a coffee",
       },
       "subline-text": {
-        0: "Or if you'd prefer",
-        1: "WE WOULD LOVE TO HEAR ABOUT YOUR PROJECT!",
+        0: "WE WOULD LOVE TO HEAR ABOUT YOUR PROJECT!",
+        1: "Or if you'd prefer",
       },
       "aside-text": {
         0: "Contact Us",
@@ -68,11 +68,24 @@
   /* scrollMagic */
   function scrollMagic() {
 
+    // If viewing site on desktop open the video slowley 
+    // If viewed on a smaller screen width then open quicker
+  
+    if(window.innerWidth <= 481){
+      var openWidthDur = 200;
+      var triggerHookResponsive = 'onEnter';
+      var valDurResponsive = 200;
+    } else{
+      var openWidthDur = 1000;
+      var triggerHookResponsive = 'onCenter';
+      var valDurResponsive = 500;
+    }
+
     var ctrl = new ScrollMagic.Controller({
       vertical: false,
       refreshInterval: 1, // set to 0 to disable
     });
-    // Scene 1 - 
+    // Scene 1 - phones
     var phoneTl = new TimelineMax();
     var aboutEl = document.getElementById('about');
     var dur = 5;
@@ -113,10 +126,10 @@
     var defaultEase = Linear.easeNone;
 
     new ScrollMagic.Scene({
-      duration: 500,
+      duration: valDurResponsive,
       reverse: true,
       triggerElement: valuesEl,
-      triggerHook: 'onCenter',
+      triggerHook: 'triggerHookResponsive',
       pushfollowers: false
     })
 
@@ -137,15 +150,6 @@
     var videoEl = document.getElementById('video');
     var dur = 10;
     var defaultEase = Linear.easeNone;
-
-    // If viewing site on desktop open the video slowley 
-    // If viewed on a smaller screen width then open quicker
-  
-    if(window.innerWidth <= 481){
-      var openWidthDur = 200;
-    } else{
-      var openWidthDur = 1000;
-    }
 
     new ScrollMagic.Scene({
       duration: openWidthDur,
