@@ -33,11 +33,11 @@
     "projects": {
       "knockout-text": {
         0: "Our values are",
-        1: "With us you will",
+        1: "With us you'll",
       },
       "subline-text": {
         0: "Our identity and our promise defining and motivating our every interaction with you.",
-        1: "With us, you will have a loyal partner ready to give you willingness and competence to solve any issues you may encounter on your path.",
+        1: "HAVE A LOYAL PARTNER READY TO GIVE YOU WILLINGNESS & COMPETENCE TO SOLVE ANY ISSUES YOU MAY ENCOUNTER.",
       },
       "aside-text": {
         0: "Insights",
@@ -72,13 +72,15 @@
     // If viewed on a smaller screen width then open quicker
   
     if(window.innerWidth <= 481){
-      var openWidthDur = 200;
+      var openWidthDur = 400;
       var triggerHookResponsive = 'onEnter';
       var valDurResponsive = 200;
+      var offsetDur = 100;
     } else{
       var openWidthDur = 1000;
       var triggerHookResponsive = 'onCenter';
       var valDurResponsive = 500;
+      var offsetDur = 200;
     }
 
     var ctrl = new ScrollMagic.Controller({
@@ -156,7 +158,7 @@
       reverse: true,
       triggerElement: videoEl,
       triggerHook: 'onEnter',
-      offset: 200,
+      offset: offsetDur,
       pushfollowers: false
     })
 
@@ -172,16 +174,17 @@
     var dur = 10;
     var defaultEase = Linear.easeNone;
     new ScrollMagic.Scene({
-      duration:openWidthDur,
+      duration: openWidthDur,
       reverse: true,
       triggerElement: mapEl,
       triggerHook: 'onEnter',
       offset: 200,
       pushfollowers: false
     })
+
     .setTween(mapTl)
     .addTo(ctrl);
-    mapTl.from(["#map"],10, {width: 0,ease: defaultEase}, "+=0");
+    mapTl.from(["#map"],5, {width: 0,ease: defaultEase}, "+=0");
       
     // *******************************
     //  Scene 5 - Text Knockout Slideup Animation
@@ -232,12 +235,6 @@
         triggerHook: 0.5
       })
       .setTween(tl)
-      // .addIndicators({
-      //   colorTrigger: "white",
-      //   colorStart: "white",
-      //   colorEnd: "white",
-      //   indent: 40
-      // })
       .addTo(ctrl);
     });
   }
@@ -268,6 +265,7 @@
         menuAnimation();        
       }
     });
+
     logoTL.to("#logo", 0, {y: "80px"});
     logoTL.to(".logo-underline", 0.25, {width: "100%"});
     logoTL.to("#logo", 0.25, {opacity: "1"});
